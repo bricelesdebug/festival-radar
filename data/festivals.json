@@ -1,1 +1,327 @@
-{"updatedAt":null,"source":"Ticketmaster Discovery API","note":"Connect API and run collector to populate live data.","events":[]}
+{
+  "updatedAt": "2026-10-23T19:09:27.214678+00:00",
+  "source": "Ticketmaster Discovery API",
+  "note": "Discovery API data; not independently verified. Festival classification is heuristic.",
+  "events": [
+    {
+      "id": "LvZ18QiCG4CEzOvZuflYT",
+      "name": "Jarred Up Festival 2026",
+      "city": "Sheffield",
+      "country": "Royaume-Uni",
+      "countryCode": "GB",
+      "date": "2026-10-24",
+      "url": "https://www.universe.com/events/jarred-up-festival-2026-tickets-MRDF54?ref=ticketmaster",
+      "source": "Ticketmaster Discovery API",
+      "genres": [
+        "Dance/Electronic"
+      ],
+      "salesStart": "2026-10-05T11:39:00Z",
+      "salesEnd": "2026-10-24T21:30:00Z",
+      "saleStatus": "on_sale"
+    },
+    {
+      "id": "LvZ18QPcbNIYXa0AnAwn9",
+      "name": "Mutations Festival 2026 - Saturday Day Ticket - Mike D + More",
+      "city": "Brighton",
+      "country": "Royaume-Uni",
+      "countryCode": "GB",
+      "date": "2026-10-24",
+      "url": "https://www.universe.com/events/mutations-festival-2026-saturday-day-ticket-mike-d-more-tickets-7WRYL2?ref=ticketmaster",
+      "source": "Ticketmaster Discovery API",
+      "genres": [
+        "Hip-Hop/Rap"
+      ],
+      "salesStart": "2026-07-22T09:00:00Z",
+      "salesEnd": "2026-10-24T21:00:00Z",
+      "saleStatus": "on_sale"
+    },
+    {
+      "id": "Z698xZ2qZ1k_4x6ad",
+      "name": "Nocturna Festival",
+      "city": "Barcelona",
+      "country": "Espagne",
+      "countryCode": "ES",
+      "date": "2026-10-31",
+      "url": "https://www.ticketmaster.es/event/nocturna-festival-tickets/655887243?language=en-us",
+      "source": "Ticketmaster Discovery API",
+      "genres": [
+        "Dance/Electronic"
+      ],
+      "salesStart": "2026-06-15T16:00:00Z",
+      "salesEnd": "2026-10-31T19:00:00Z",
+      "saleStatus": "on_sale"
+    },
+    {
+      "id": "17u8v0G629NR6EJ",
+      "name": "La Discotheque Festival, Manchester",
+      "city": "Manchester",
+      "country": "Royaume-Uni",
+      "countryCode": "GB",
+      "date": "2026-11-07",
+      "url": "https://www.ticketmaster.co.uk/la-discotheque-festival-manchester-manchester-07-11-2026/event/350064F5E3BC79E6",
+      "source": "Ticketmaster Discovery API",
+      "genres": [
+        "Dance/Electronic"
+      ],
+      "salesStart": "2026-07-31T11:00:00Z",
+      "salesEnd": "2026-11-07T18:00:00Z",
+      "saleStatus": "on_sale"
+    },
+    {
+      "id": "Z698xZQpZ16vjYuJbb",
+      "name": "XXXV FESTIWAL ARS CAMERALIS: Hüma Utku",
+      "city": "Katowice",
+      "country": "Pologne",
+      "countryCode": "PL",
+      "date": "2026-11-15",
+      "url": "https://www.ticketmaster.pl/event/xxxv-festiwal-ars-cameralis-huma-utku-tickets/1730366618?language=en-us",
+      "source": "Ticketmaster Discovery API",
+      "genres": [
+        "Alternative",
+        "Folk",
+        "Jazz",
+        "World"
+      ],
+      "salesStart": "2026-09-30T10:00:00Z",
+      "salesEnd": "2026-11-15T18:30:00Z",
+      "saleStatus": "on_sale"
+    },
+    {
+      "id": "Z698xZQpZ1k-V1KoM",
+      "name": "One Love Wrocław Music Festival 2026",
+      "city": "Wroclaw",
+      "country": "Pologne",
+      "countryCode": "PL",
+      "date": "2026-11-21",
+      "url": "https://www.ticketmaster.pl/event/one-love-wrocaw-music-festival-2026-tickets/874293477?language=en-us",
+      "source": "Ticketmaster Discovery API",
+      "genres": [
+        "Alternative",
+        "Dance/Electronic",
+        "Pop",
+        "R&B",
+        "Rock"
+      ],
+      "salesStart": "2026-07-16T09:00:00Z",
+      "salesEnd": "2026-11-21T22:59:00Z",
+      "saleStatus": "on_sale"
+    },
+    {
+      "id": "Z698xZu3Z16v7-Pzjk",
+      "name": "Tension Winter Festival 2026 | Friday",
+      "city": "Basel",
+      "country": "Suisse",
+      "countryCode": "CH",
+      "date": "2026-11-27",
+      "url": "https://www.ticketmaster.ch/event/tension-winter-festival-2026-%7C-friday-tickets/1121978706?language=en-us",
+      "source": "Ticketmaster Discovery API",
+      "genres": [
+        "Dance/Electronic"
+      ],
+      "salesStart": "2026-08-12T13:27:00Z",
+      "salesEnd": "2026-11-28T04:00:00Z",
+      "saleStatus": "on_sale"
+    },
+    {
+      "id": "Z698xZu3Z16v7K4-Zv",
+      "name": "Tension Winter Festival 2026 | 2 day ticket (27+28.11.2026)",
+      "city": "Basel",
+      "country": "Suisse",
+      "countryCode": "CH",
+      "date": "2026-11-28",
+      "url": "https://www.ticketmaster.ch/event/tension-winter-festival-2026-%7C-2-day-ticket-2728112026--tickets/1113561001?language=en-us",
+      "source": "Ticketmaster Discovery API",
+      "genres": [
+        "Dance/Electronic"
+      ],
+      "salesStart": "2026-07-08T10:00:00Z",
+      "salesEnd": "2026-11-28T22:59:00Z",
+      "saleStatus": "on_sale"
+    },
+    {
+      "id": "Z698xZu3Z16v7OPvA7",
+      "name": "Tension Winter Festival 2026 | Saturday",
+      "city": "Basel",
+      "country": "Suisse",
+      "countryCode": "CH",
+      "date": "2026-11-28",
+      "url": "https://www.ticketmaster.ch/event/tension-winter-festival-2026-%7C-saturday-tickets/1120941144?language=en-us",
+      "source": "Ticketmaster Discovery API",
+      "genres": [
+        "Dance/Electronic"
+      ],
+      "salesStart": "2026-08-12T14:06:00Z",
+      "salesEnd": "2026-11-29T04:00:00Z",
+      "saleStatus": "on_sale"
+    },
+    {
+      "id": "Z698xZQpZ1k8s_dAt",
+      "name": "Festiwal Muzyki Disco Szczecin - Hype Disco Festiwal",
+      "city": "Szczecin",
+      "country": "Pologne",
+      "countryCode": "PL",
+      "date": "2026-12-12",
+      "url": "https://www.ticketmaster.pl/event/festiwal-muzyki-disco-szczecin-hype-disco-festiwal-tickets/431643169?language=en-us",
+      "source": "Ticketmaster Discovery API",
+      "genres": [
+        "Dance/Electronic"
+      ],
+      "salesStart": "2026-09-25T12:37:00Z",
+      "salesEnd": "2026-12-12T17:59:00Z",
+      "saleStatus": "on_sale"
+    },
+    {
+      "id": "Z698xZQpZ16vp93d-F",
+      "name": "Festiwal Muzyki Disco Lublin - Hype Disco Festiwal",
+      "city": "Lublin",
+      "country": "Pologne",
+      "countryCode": "PL",
+      "date": "2026-12-19",
+      "url": "https://www.ticketmaster.pl/event/festiwal-muzyki-disco-lublin-hype-disco-festiwal-tickets/1597483848?language=en-us",
+      "source": "Ticketmaster Discovery API",
+      "genres": [
+        "Dance/Electronic"
+      ],
+      "salesStart": "2026-09-25T10:04:00Z",
+      "salesEnd": "2026-12-19T22:59:00Z",
+      "saleStatus": "on_sale"
+    },
+    {
+      "id": "Z698xZQpZ1k--4Pfb",
+      "name": "Festiwal Muzyki Disco Wrocław - Hype Disco Festiwal",
+      "city": "Wroclaw",
+      "country": "Pologne",
+      "countryCode": "PL",
+      "date": "2027-02-12",
+      "url": "https://www.ticketmaster.pl/event/festiwal-muzyki-disco-wrocaw-hype-disco-festiwal-tickets/861565518?language=en-us",
+      "source": "Ticketmaster Discovery API",
+      "genres": [
+        "Dance/Electronic"
+      ],
+      "salesStart": "2026-09-25T09:14:00Z",
+      "salesEnd": "2027-02-12T18:59:00Z",
+      "saleStatus": "on_sale"
+    },
+    {
+      "id": "Z698xZC2Z16vr3epZy",
+      "name": "TMF - Trier Music Festival 2025",
+      "city": "Trier",
+      "country": "Allemagne",
+      "countryCode": "DE",
+      "date": "2027-03-20",
+      "url": "https://www.ticketmaster.de/event/tmf-trier-music-festival-2025-tickets/1792096039?language=en-us",
+      "source": "Ticketmaster Discovery API",
+      "genres": [
+        "Dance/Electronic",
+        "Undefined"
+      ],
+      "salesStart": "2026-03-23T10:25:00Z",
+      "salesEnd": "2027-03-20T22:59:00Z",
+      "saleStatus": "on_sale"
+    },
+    {
+      "id": "Z698xZbpZ16vFEAIOy",
+      "name": "High Tea Indoor Festeaval 2027",
+      "city": "Amsterdam",
+      "country": "Pays-Bas",
+      "countryCode": "NL",
+      "date": "2027-04-10",
+      "url": "https://www.ticketmaster.nl/event/high-tea-indoor-festeaval-2027-tickets/1227168839?language=en-us",
+      "source": "Ticketmaster Discovery API",
+      "genres": [
+        "Dance/Electronic"
+      ],
+      "salesStart": "2026-08-21T08:00:00Z",
+      "salesEnd": "2027-04-11T01:00:00Z",
+      "saleStatus": "on_sale"
+    },
+    {
+      "id": "Z698xZQpZ16vFtAxas",
+      "name": "Festiwal Muzyki Disco Łódź - Hype Disco Festiwal",
+      "city": "Łódź ",
+      "country": "Pologne",
+      "countryCode": "PL",
+      "date": "2027-04-18",
+      "url": "https://www.ticketmaster.pl/event/festiwal-muzyki-disco-lodz-hype-disco-festiwal-tickets/1229162271?language=en-us",
+      "source": "Ticketmaster Discovery API",
+      "genres": [
+        "Dance/Electronic"
+      ],
+      "salesStart": "2026-09-25T12:04:00Z",
+      "salesEnd": "2027-04-18T16:59:00Z",
+      "saleStatus": "on_sale"
+    },
+    {
+      "id": "Z698xZ2qZ16v3dGUAP",
+      "name": "Vida Festival 2027",
+      "city": "Vilanova i la Geltrú",
+      "country": "Espagne",
+      "countryCode": "ES",
+      "date": "2027-07-03",
+      "url": "https://www.ticketmaster.es/event/vida-festival-2027-tickets/1483336165?language=en-us",
+      "source": "Ticketmaster Discovery API",
+      "genres": [
+        "Dance/Electronic",
+        "Folk",
+        "Hip-Hop/Rap",
+        "Pop",
+        "Rock",
+        "Undefined"
+      ],
+      "salesStart": "2026-07-07T07:30:00Z",
+      "salesEnd": "2027-07-03T21:59:00Z",
+      "saleStatus": "on_sale"
+    },
+    {
+      "id": "Z698xZu3Z16vqY8Jpo",
+      "name": "Openair Frauenfeld 2027 | VIP festival ticket",
+      "city": "Frauenfeld",
+      "country": "Suisse",
+      "countryCode": "CH",
+      "date": "2027-07-08",
+      "url": "https://www.ticketmaster.ch/event/openair-frauenfeld-2027-%7C-vip-festival-ticket-tickets/1770426591?language=en-us",
+      "source": "Ticketmaster Discovery API",
+      "genres": [
+        "Dance/Electronic",
+        "Hip-Hop/Rap",
+        "R&B",
+        "Reggae"
+      ],
+      "salesStart": "2026-07-24T10:00:00Z",
+      "salesEnd": "2027-07-11T02:00:00Z",
+      "saleStatus": "on_sale"
+    },
+    {
+      "id": "Z698xZC2Z1kPy4P0v",
+      "name": "Meute - KOSMOS LIVE - Open Air",
+      "city": "Erlangen",
+      "country": "Allemagne",
+      "countryCode": "DE",
+      "date": "2027-07-18",
+      "url": "https://www.ticketmaster.de/event/meute-kosmos-live-open-air-tickets/979565901?language=en-us",
+      "source": "Ticketmaster Discovery API",
+      "genres": [
+        "Dance/Electronic"
+      ],
+      "salesStart": "2026-07-27T10:00:00Z",
+      "salesEnd": "2027-07-18T09:00:00Z",
+      "saleStatus": "on_sale"
+    },
+    {
+      "id": "Z698xZQpZ16vF7jxq8",
+      "name": "Festiwal Muzyki Disco Trójmiasto - Hype Disco Festiwal",
+      "city": "Gdańsk/Sopot",
+      "country": "Pologne",
+      "countryCode": "PL",
+      "date": "2027-11-20",
+      "url": "https://www.ticketmaster.pl/event/festiwal-muzyki-disco-trojmiasto-hype-disco-festiwal-tickets/1204722750?language=en-us",
+      "source": "Ticketmaster Discovery API",
+      "genres": [
+        "Dance/Electronic"
+      ],
+      "salesStart": "2026-09-25T11:22:00Z",
+      "salesEnd": "2027-11-20T22:59:00Z",
+      "saleStatus": "on_sale"
+    }
+  ]
+}
