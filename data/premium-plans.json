@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "billingEnabled": false,
+  "currency": "EUR",
+  "plans": [
+    {"id": "free", "name": "Free", "monthlyPriceMinor": 0, "available": true,
+      "features": ["Catalogue européen", "Favoris synchronisés", "Préférences et aperçu du radar"]},
+    {"id": "premium", "name": "Premium", "monthlyPriceMinor": 499, "available": false,
+      "priceStatus": "indicative",
+      "features": ["Alertes personnalisées par email (en préparation)", "Suivi d’artistes (en préparation)", "Notifications prioritaires (en préparation)"]}
+  ]
+}

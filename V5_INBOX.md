@@ -1,23 +1,7 @@
-# Festival Radar V5: internal notifications
+# Festival Radar — notifications en préparation
 
-The site already displays each authenticated user's own `alert_deliveries` through RLS.
-The new `scripts/stage_inbox.py` prepares server-side inbox entries for users
-who **favorited** a Ticketmaster event. No emails are sent.
+Le workflow `stage-inbox.yml` est maintenant un aperçu hors ligne : aucune clé Supabase n'est injectée et aucune notification n'est écrite. Le workflow de collecte produit uniquement des candidats à relire.
 
-**Not active yet.** The manual workflow only processes
-`data/alert-candidates.json` when that file has been intentionally reviewed and
-committed. The collector currently uploads candidates as a GitHub Actions artifact
-and does not commit them, so running this workflow without an approved file does
-nothing. This avoids mass false-positive notifications.
+Le script `stage_inbox.py` fonctionne par défaut sans réseau. Une future exécution avec écriture exige une autorisation opérateur distincte, `--apply`, `INBOX_WRITES_APPROVED=true` et des `reviewedEventKeys` explicites dans le fichier. Ces conditions ne sont pas activées. Les comptes éligibles doivent suivre l'événement et disposer de préférences compatibles. Aucun email n'est envoyé par ce script.
 
-When ready:
-- Set GitHub Actions variable `SUPABASE_URL` to the project URL.
-- Set GitHub Actions **secret** `SUPABASE_SERVICE_ROLE_KEY` to the server-only
-  service_role key from Supabase. NEVER paste it into chat or public source.
-- Review candidate events carefully, especially heuristically identified festivals.
-- Only after review, place approved candidates in `data/alert-candidates.json`.
-- Manually run `Stage inbox notifications (manual only)` in GitHub Actions.
-- Inspect a test account's private inbox. Delivery records are idempotent.
-
-Before scheduling automatic distribution, implement a reliable review/validation
-policy and safeguards against reused historical snapshots and false sale alerts.
+Voir [DEVELOPMENT.md](DEVELOPMENT.md) et `scripts/preview_alerts.py` pour l'aperçu personnalisé privé, qui ne dépend d'aucun service connecté.

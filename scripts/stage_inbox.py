@@ -13,19 +13,31 @@ import urllib.parse
 import urllib.request
 import urllib.error
 from pathlib import Path
+from preview_alerts import matches
 
-BASE = os.environ.get("SUPABASE_URL", "").rstrip("/")
-KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY", "")
-if not BASE.startswith("https://") or not KEY:
-    raise SystemExit("Missing SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY")
 parser = argparse.ArgumentParser()
 parser.add_argument("candidates")
-parser.add_argument("--automatic", action="store_true", help="Only date changes to already-followed events")
+parser.add_argument("--apply", action="store_true", help="Requires separate operator approval and reviewed keys")
 args = parser.parse_args()
 data = json.loads(Path(args.candidates).read_text(encoding="utf-8"))
 changes = data.get("changes", [])
 if not isinstance(changes, list):
     raise SystemExit("Invalid candidate file")
+if not args.apply:
+    print(f"Preview only: {len(changes)} candidates need review. No database writes or emails.")
+    raise SystemExit(0)
+if os.environ.get("INBOX_WRITES_APPROVED") != "true":
+    raise SystemExit("Inbox writes require explicit operator approval")
+approved = data.get("reviewedEventKeys", [])
+if not isinstance(approved, list) or not approved:
+    raise SystemExit("Explicit reviewedEventKeys required")
+changes = [c for c in changes if c.get("event_key") in approved]
+if len(changes) > 100:
+    raise SystemExit("Safety limit: over 100 changes")
+BASE = os.environ.get("SUPABASE_URL", "").rstrip("/")
+KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY", "")
+if not BASE.startswith("https://") or not KEY:
+    raise SystemExit("Missing SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY")
 
 def request(method, table, params="", payload=None, prefer=None):
     url = BASE + "/rest/v1/" + table + (("?" + params) if params else "")
@@ -46,10 +58,6 @@ def request(method, table, params="", payload=None, prefer=None):
 count = 0
 processed = 0
 for change in changes:
-    if args.automatic and change.get("event_type") != "event_date_changed":
-        continue
-    if args.automatic and (not change.get("payload", {}).get("before") or not change.get("payload", {}).get("after")):
-        continue
     processed += 1
     if processed > 100:
         raise SystemExit("Safety limit: over 100 changes; manual review required")
@@ -67,8 +75,16 @@ for change in changes:
                     "select=user_id&festival_id=eq." + urllib.parse.quote(str(fid), safe=""))
     if not users:
         continue
-    deliveries = [{"event_key": key, "user_id": item["user_id"]}
-                  for item in users if item.get("user_id")]
+    eligible = []
+    for item in users:
+        uid = item.get("user_id")
+        if not uid:
+            continue
+        preferences = request("GET", "alert_preferences",
+            "select=countries,genres&user_id=eq." + urllib.parse.quote(uid, safe=""))
+        if preferences and matches(change.get("payload", {}), preferences[0]):
+            eligible.append(uid)
+    deliveries = [{"event_key": key, "user_id": uid} for uid in set(eligible)]
     if deliveries:
         request("POST", "alert_deliveries", "on_conflict=event_key,user_id",
                 deliveries, "resolution=ignore-duplicates,return=minimal")
