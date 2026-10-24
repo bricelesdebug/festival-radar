@@ -6,6 +6,7 @@ Requires SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY in server secrets.
 Only users who explicitly follow the event get an inbox entry.
 """
 import json
+import argparse
 import os
 import sys
 import urllib.parse
@@ -17,10 +18,11 @@ BASE = os.environ.get("SUPABASE_URL", "").rstrip("/")
 KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY", "")
 if not BASE.startswith("https://") or not KEY:
     raise SystemExit("Missing SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY")
-if len(sys.argv) != 2:
-    raise SystemExit("Usage: python scripts/stage_inbox.py <candidate-json>")
-
-data = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
+parser = argparse.ArgumentParser()
+parser.add_argument("candidates")
+parser.add_argument("--automatic", action="store_true", help="Only date changes to already-followed events")
+args = parser.parse_args()
+data = json.loads(Path(args.candidates).read_text(encoding="utf-8"))
 changes = data.get("changes", [])
 if not isinstance(changes, list):
     raise SystemExit("Invalid candidate file")
@@ -42,7 +44,15 @@ def request(method, table, params="", payload=None, prefer=None):
         raise RuntimeError(f"Supabase {table} returned HTTP {exc.code}") from None
 
 count = 0
+processed = 0
 for change in changes:
+    if args.automatic and change.get("event_type") != "event_date_changed":
+        continue
+    if args.automatic and (not change.get("payload", {}).get("before") or not change.get("payload", {}).get("after")):
+        continue
+    processed += 1
+    if processed > 100:
+        raise SystemExit("Safety limit: over 100 changes; manual review required")
     key = change.get("event_key")
     fid = change.get("festival_id")
     if not key or not fid or change.get("event_type") not in (
@@ -63,4 +73,4 @@ for change in changes:
         request("POST", "alert_deliveries", "on_conflict=event_key,user_id",
                 deliveries, "resolution=ignore-duplicates,return=minimal")
         count += len(deliveries)
-print(f"Staged up to {count} inbox records for favorited events. No emails sent.")
+print(f"Processed {processed} changes, staged up to {count} inbox records. No emails sent.")
