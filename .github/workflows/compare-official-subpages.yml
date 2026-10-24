@@ -1,0 +1,27 @@
+name: Compare approved official subpages (manual)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compare approved pages
+        run: python scripts/compare_official_subpages.py
+      - name: Upload baseline and review report
+        uses: actions/upload-artifact@v4
+        with:
+          name: official-subpage-v15-review
+          path: |
+            data/official-subpage-baseline.json
+            data/official-subpage-changes.json
+          retention-days: 14
