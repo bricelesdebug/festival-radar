@@ -6,6 +6,10 @@ on:
   schedule:
     - cron: '17 */6 * * *'
 
+concurrency:
+  group: festival-radar-collection
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
@@ -38,6 +42,18 @@ jobs:
             python scripts/detect_alerts.py /tmp/festival-radar-previous.json data/festivals.json -o /tmp/festival-radar-alert-candidates.json
           else
             echo 'No baseline: skipping alerts to avoid false new-event notifications'
+          fi
+
+      - name: Stage private notifications for confirmed date-field changes
+        if: ${{ hashFiles('data/festivals.json') != '' }}
+        env:
+          SUPABASE_URL: ${{ vars.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          if [ -f /tmp/festival-radar-alert-candidates.json ]; then
+            python scripts/stage_inbox.py /tmp/festival-radar-alert-candidates.json --automatic
+          else
+            echo "No previous snapshot: no inbox updates"
           fi
 
       - name: Upload review-only alert candidates
