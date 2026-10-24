@@ -1,0 +1,25 @@
+name: Review official festival subpages (manual)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Review permitted official pages
+        run: python scripts/review_official_subpages.py
+      - name: Upload source review report
+        uses: actions/upload-artifact@v4
+        with:
+          name: official-subpage-review
+          path: data/official-subpage-review.json
+          retention-days: 14
