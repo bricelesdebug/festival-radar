@@ -1,0 +1,60 @@
+name: Validate live collection and Supabase (no delivery)
+on:
+  workflow_dispatch:
+  push:
+    branches: [codex/reliable-collection-alerts-premium]
+    paths:
+      - scripts/collect.py
+      - scripts/validate_supabase.py
+      - .github/workflows/live-validation.yml
+permissions:
+  contents: read
+concurrency:
+  group: festival-radar-live-validation
+  cancel-in-progress: false
+jobs:
+  collection:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Collect real candidates into temporary output only
+        env:
+          TICKETMASTER_API_KEY: ${{ secrets.TICKETMASTER_API_KEY }}
+        run: python scripts/collect.py --output /tmp/validation-catalog.json --report /tmp/collection-health.json
+      - name: Audit isolated collection
+        run: python scripts/audit_catalog.py /tmp/validation-catalog.json
+      - name: Log safe collection summary
+        if: always()
+        run: |
+          if [ -f /tmp/collection-health.json ]; then cat /tmp/collection-health.json; fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: live-collection-health
+          path: /tmp/collection-health.json
+          if-no-files-found: ignore
+          retention-days: 14
+  supabase:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate accounts, favorites, preferences and inbox without email
+        env:
+          SUPABASE_URL: ${{ vars.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: python scripts/validate_supabase.py --report /tmp/supabase-validation.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: live-supabase-validation
+          path: /tmp/supabase-validation.json
+          if-no-files-found: ignore
+          retention-days: 14
