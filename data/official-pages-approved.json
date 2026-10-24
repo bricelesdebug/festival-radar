@@ -1,4 +1,47 @@
 {
-  "note": "Only add URLs after human review of relevance and permitted automated access. No pages approved yet.",
-  "pages": []
+  "note": "Curated European official source URLs from V14 review. Monitoring access is rechecked at runtime. Metadata changes are not verified announcements.",
+  "pages": [
+    {
+      "festival": "Tomorrowland",
+      "url": "https://www.tomorrowland.com/events",
+      "topics": [
+        "dates"
+      ]
+    },
+    {
+      "festival": "Awakenings Festival",
+      "url": "https://www.awakenings.com/en/tickets/",
+      "topics": [
+        "tickets"
+      ]
+    },
+    {
+      "festival": "Awakenings Festival",
+      "url": "https://www.awakenings.com/en/artists/",
+      "topics": [
+        "lineup"
+      ]
+    },
+    {
+      "festival": "Time Warp",
+      "url": "https://www.time-warp.de/tickets/",
+      "topics": [
+        "tickets"
+      ]
+    },
+    {
+      "festival": "Time Warp",
+      "url": "https://www.time-warp.de/artists/",
+      "topics": [
+        "lineup"
+      ]
+    },
+    {
+      "festival": "Kappa FuturFestival",
+      "url": "https://www.kappafuturfestival.it/line-up-28a0",
+      "topics": [
+        "lineup"
+      ]
+    }
+  ]
 }
