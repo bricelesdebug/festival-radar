@@ -36,6 +36,9 @@ jobs:
           TICKETMASTER_API_KEY: ${{ secrets.TICKETMASTER_API_KEY }}
         run: python scripts/collect.py
 
+      - name: Audit catalog quality
+        run: python scripts/audit_catalog.py data/festivals.json
+
       - name: Detect candidate changes (no email sending)
         run: |
           if [ -f /tmp/festival-radar-previous.json ]; then
