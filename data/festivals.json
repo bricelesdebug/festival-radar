@@ -1,26 +1,8 @@
 {
-  "updatedAt": "2026-10-24T07:00:50.269317+00:00",
+  "updatedAt": "2026-10-24T12:57:24.137405+00:00",
   "source": "Ticketmaster Discovery API",
   "note": "Discovery API data; electronic classification is broad. Festival status and techno/house subgenres are unverified.",
   "events": [
-    {
-      "id": "LvZ18QiCG4CEzOvZuflYT",
-      "name": "Jarred Up Festival 2026",
-      "city": "Sheffield",
-      "country": "Royaume-Uni",
-      "countryCode": "GB",
-      "date": "2026-10-24",
-      "url": "https://www.universe.com/events/jarred-up-festival-2026-tickets-MRDF54?ref=ticketmaster",
-      "source": "Ticketmaster Discovery API",
-      "genres": [
-        "Dance/Electronic"
-      ],
-      "genreScope": "electronic_broad",
-      "festivalConfidence": "unverified",
-      "salesStart": "2026-10-05T11:39:00Z",
-      "salesEnd": "2026-10-24T21:30:00Z",
-      "saleStatus": "on_sale"
-    },
     {
       "id": "Z698xZ2qZ1k_4x6ad",
       "name": "Nocturna Festival",
