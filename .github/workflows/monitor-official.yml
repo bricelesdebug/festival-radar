@@ -1,0 +1,47 @@
+name: Review official homepage changes
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '43 8 * * *'
+
+concurrency:
+  group: official-homepage-monitor
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compare permitted homepage metadata
+        run: python scripts/monitor_official_homepages.py
+      - name: Upload review-only report
+        uses: actions/upload-artifact@v4
+        with:
+          name: official-homepage-review
+          path: data/official-homepage-changes.json
+          retention-days: 14
+      - name: Persist baseline
+        run: |
+          git config user.name "festival-radar-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          cp data/official-homepage-baseline.json /tmp/homepage-baseline.json
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            cp /tmp/homepage-baseline.json data/official-homepage-baseline.json
+            git add data/official-homepage-baseline.json
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m "Update official homepage metadata baseline"
+            if git push origin HEAD:main; then exit 0; fi
+            sleep 2
+          done
+          exit 1
