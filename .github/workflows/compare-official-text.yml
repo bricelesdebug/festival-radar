@@ -1,0 +1,56 @@
+name: Compare official page text (review only)
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: festival-radar-text-review
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Collect permitted visible text
+        run: python scripts/inspect_official_text.py
+      - name: Compare with previous baseline
+        run: python scripts/compare_official_text.py
+      - name: Upload review candidates
+        uses: actions/upload-artifact@v4
+        with:
+          name: official-text-change-review
+          path: |
+            data/official-text-baseline.json
+            data/official-text-changes.json
+          retention-days: 14
+      - name: Persist text baseline
+        run: |
+          git config user.name "festival-radar-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          cp data/official-text-baseline.json /tmp/festival-radar-text-baseline.json
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            cp /tmp/festival-radar-text-baseline.json data/official-text-baseline.json
+            git add data/official-text-baseline.json
+            if git diff --cached --quiet; then
+              echo "Baseline unchanged"
+              exit 0
+            fi
+            git commit -m "Update official text baseline"
+            if git push origin HEAD:main; then
+              echo "Baseline published"
+              exit 0
+            fi
+            sleep 2
+          done
+          echo "Baseline publication failed"
+          exit 1
