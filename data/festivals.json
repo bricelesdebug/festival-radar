@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-10-24T06:58:14.196985+00:00",
+  "updatedAt": "2026-10-24T07:00:31.615676+00:00",
   "source": "Ticketmaster Discovery API",
-  "note": "Discovery API data; not independently verified. Festival classification is heuristic.",
+  "note": "Discovery API data; electronic classification is broad. Festival status and techno/house subgenres are unverified.",
   "events": [
     {
       "id": "LvZ18QiCG4CEzOvZuflYT",
@@ -15,24 +15,10 @@
       "genres": [
         "Dance/Electronic"
       ],
+      "genreScope": "electronic_broad",
+      "festivalConfidence": "unverified",
       "salesStart": "2026-10-05T11:39:00Z",
       "salesEnd": "2026-10-24T21:30:00Z",
-      "saleStatus": "on_sale"
-    },
-    {
-      "id": "LvZ18QPcbNIYXa0AnAwn9",
-      "name": "Mutations Festival 2026 - Saturday Day Ticket - Mike D + More",
-      "city": "Brighton",
-      "country": "Royaume-Uni",
-      "countryCode": "GB",
-      "date": "2026-10-24",
-      "url": "https://www.universe.com/events/mutations-festival-2026-saturday-day-ticket-mike-d-more-tickets-7WRYL2?ref=ticketmaster",
-      "source": "Ticketmaster Discovery API",
-      "genres": [
-        "Hip-Hop/Rap"
-      ],
-      "salesStart": "2026-07-22T09:00:00Z",
-      "salesEnd": "2026-10-24T21:00:00Z",
       "saleStatus": "on_sale"
     },
     {
@@ -47,6 +33,8 @@
       "genres": [
         "Dance/Electronic"
       ],
+      "genreScope": "electronic_broad",
+      "festivalConfidence": "unverified",
       "salesStart": "2026-06-15T16:00:00Z",
       "salesEnd": "2026-10-31T19:00:00Z",
       "saleStatus": "on_sale"
@@ -63,27 +51,10 @@
       "genres": [
         "Dance/Electronic"
       ],
+      "genreScope": "electronic_broad",
+      "festivalConfidence": "unverified",
       "salesStart": "2026-07-31T11:00:00Z",
       "salesEnd": "2026-11-07T18:00:00Z",
-      "saleStatus": "on_sale"
-    },
-    {
-      "id": "Z698xZQpZ16vjYuJbb",
-      "name": "XXXV FESTIWAL ARS CAMERALIS: Hüma Utku",
-      "city": "Katowice",
-      "country": "Pologne",
-      "countryCode": "PL",
-      "date": "2026-11-15",
-      "url": "https://www.ticketmaster.pl/event/xxxv-festiwal-ars-cameralis-huma-utku-tickets/1730366618?language=en-us",
-      "source": "Ticketmaster Discovery API",
-      "genres": [
-        "Alternative",
-        "Folk",
-        "Jazz",
-        "World"
-      ],
-      "salesStart": "2026-09-30T10:00:00Z",
-      "salesEnd": "2026-11-15T18:30:00Z",
       "saleStatus": "on_sale"
     },
     {
@@ -102,6 +73,8 @@
         "R&B",
         "Rock"
       ],
+      "genreScope": "electronic_broad",
+      "festivalConfidence": "unverified",
       "salesStart": "2026-07-16T09:00:00Z",
       "salesEnd": "2026-11-21T22:59:00Z",
       "saleStatus": "on_sale"
@@ -118,6 +91,8 @@
       "genres": [
         "Dance/Electronic"
       ],
+      "genreScope": "electronic_broad",
+      "festivalConfidence": "unverified",
       "salesStart": "2026-08-12T13:27:00Z",
       "salesEnd": "2026-11-28T04:00:00Z",
       "saleStatus": "on_sale"
@@ -134,6 +109,8 @@
       "genres": [
         "Dance/Electronic"
       ],
+      "genreScope": "electronic_broad",
+      "festivalConfidence": "unverified",
       "salesStart": "2026-07-08T10:00:00Z",
       "salesEnd": "2026-11-28T22:59:00Z",
       "saleStatus": "on_sale"
@@ -150,6 +127,8 @@
       "genres": [
         "Dance/Electronic"
       ],
+      "genreScope": "electronic_broad",
+      "festivalConfidence": "unverified",
       "salesStart": "2026-08-12T14:06:00Z",
       "salesEnd": "2026-11-29T04:00:00Z",
       "saleStatus": "on_sale"
@@ -166,6 +145,8 @@
       "genres": [
         "Dance/Electronic"
       ],
+      "genreScope": "electronic_broad",
+      "festivalConfidence": "unverified",
       "salesStart": "2026-09-25T12:37:00Z",
       "salesEnd": "2026-12-12T17:59:00Z",
       "saleStatus": "on_sale"
@@ -182,6 +163,8 @@
       "genres": [
         "Dance/Electronic"
       ],
+      "genreScope": "electronic_broad",
+      "festivalConfidence": "unverified",
       "salesStart": "2026-09-25T10:04:00Z",
       "salesEnd": "2026-12-19T22:59:00Z",
       "saleStatus": "on_sale"
@@ -198,6 +181,8 @@
       "genres": [
         "Dance/Electronic"
       ],
+      "genreScope": "electronic_broad",
+      "festivalConfidence": "unverified",
       "salesStart": "2026-09-25T09:14:00Z",
       "salesEnd": "2027-02-12T18:59:00Z",
       "saleStatus": "on_sale"
@@ -215,6 +200,8 @@
         "Dance/Electronic",
         "Undefined"
       ],
+      "genreScope": "electronic_broad",
+      "festivalConfidence": "unverified",
       "salesStart": "2026-03-23T10:25:00Z",
       "salesEnd": "2027-03-20T22:59:00Z",
       "saleStatus": "on_sale"
@@ -231,6 +218,8 @@
       "genres": [
         "Dance/Electronic"
       ],
+      "genreScope": "electronic_broad",
+      "festivalConfidence": "unverified",
       "salesStart": "2026-08-21T08:00:00Z",
       "salesEnd": "2027-04-11T01:00:00Z",
       "saleStatus": "on_sale"
@@ -247,6 +236,8 @@
       "genres": [
         "Dance/Electronic"
       ],
+      "genreScope": "electronic_broad",
+      "festivalConfidence": "unverified",
       "salesStart": "2026-09-25T12:04:00Z",
       "salesEnd": "2027-04-18T16:59:00Z",
       "saleStatus": "on_sale"
@@ -268,6 +259,8 @@
         "Rock",
         "Undefined"
       ],
+      "genreScope": "electronic_broad",
+      "festivalConfidence": "unverified",
       "salesStart": "2026-07-07T07:30:00Z",
       "salesEnd": "2027-07-03T21:59:00Z",
       "saleStatus": "on_sale"
@@ -287,6 +280,8 @@
         "R&B",
         "Reggae"
       ],
+      "genreScope": "electronic_broad",
+      "festivalConfidence": "unverified",
       "salesStart": "2026-07-24T10:00:00Z",
       "salesEnd": "2027-07-11T02:00:00Z",
       "saleStatus": "on_sale"
@@ -303,6 +298,8 @@
       "genres": [
         "Dance/Electronic"
       ],
+      "genreScope": "electronic_broad",
+      "festivalConfidence": "unverified",
       "salesStart": "2026-07-27T10:00:00Z",
       "salesEnd": "2027-07-18T09:00:00Z",
       "saleStatus": "on_sale"
@@ -319,6 +316,8 @@
       "genres": [
         "Dance/Electronic"
       ],
+      "genreScope": "electronic_broad",
+      "festivalConfidence": "unverified",
       "salesStart": "2026-09-25T11:22:00Z",
       "salesEnd": "2027-11-20T22:59:00Z",
       "saleStatus": "on_sale"
