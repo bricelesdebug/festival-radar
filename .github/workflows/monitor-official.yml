@@ -23,11 +23,15 @@ jobs:
           python-version: '3.12'
       - name: Compare permitted homepage metadata
         run: python scripts/monitor_official_homepages.py
+      - name: Classify potential announcement topics (review only)
+        run: python scripts/classify_official_changes.py
       - name: Upload review-only report
         uses: actions/upload-artifact@v4
         with:
           name: official-homepage-review
-          path: data/official-homepage-changes.json
+          path: |
+            data/official-homepage-changes.json
+            data/official-announcement-candidates.json
           retention-days: 14
       - name: Persist baseline
         run: |
