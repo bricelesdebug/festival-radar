@@ -53,8 +53,24 @@ jobs:
         run: |
           git config user.name "festival-radar-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/festivals.json
-          if ! git diff --cached --quiet; then
+          # Keep the newly collected dataset safe while synchronizing the branch.
+          cp data/festivals.json /tmp/festival-radar-new.json
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            cp /tmp/festival-radar-new.json data/festivals.json
+            git add data/festivals.json
+            if git diff --cached --quiet; then
+              echo "No dataset changes to publish"
+              exit 0
+            fi
             git commit -m "Update festival discovery data"
-            git push
-          fi
+            if git push origin HEAD:main; then
+              echo "Dataset published successfully"
+              exit 0
+            fi
+            echo "Concurrent push detected, retrying ($attempt/3)"
+            sleep 2
+          done
+          echo "Could not publish dataset after 3 attempts"
+          exit 1
