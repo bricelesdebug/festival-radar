@@ -2,9 +2,15 @@ name: Compare approved official subpages (manual)
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '31 9 * * *'
+
+concurrency:
+  group: festival-radar-approved-subpages
+  cancel-in-progress: false
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   compare:
@@ -25,3 +31,26 @@ jobs:
             data/official-subpage-baseline.json
             data/official-subpage-changes.json
           retention-days: 14
+      - name: Persist comparison baseline
+        run: |
+          git config user.name "festival-radar-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          cp data/official-subpage-baseline.json /tmp/approved-subpage-baseline.json
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            cp /tmp/approved-subpage-baseline.json data/official-subpage-baseline.json
+            git add data/official-subpage-baseline.json
+            if git diff --cached --quiet; then
+              echo "Baseline unchanged"
+              exit 0
+            fi
+            git commit -m "Update official subpage baseline"
+            if git push origin HEAD:main; then
+              echo "Baseline published"
+              exit 0
+            fi
+            sleep 2
+          done
+          echo "Baseline push failed"
+          exit 1
