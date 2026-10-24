@@ -21,10 +21,33 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Save previous snapshot for comparison
+        run: |
+          if [ -f data/festivals.json ]; then
+            cp data/festivals.json /tmp/festival-radar-previous.json
+          fi
+
       - name: Fetch official API
         env:
           TICKETMASTER_API_KEY: ${{ secrets.TICKETMASTER_API_KEY }}
         run: python scripts/collect.py
+
+      - name: Detect candidate changes (no email sending)
+        run: |
+          if [ -f /tmp/festival-radar-previous.json ]; then
+            python scripts/detect_alerts.py /tmp/festival-radar-previous.json data/festivals.json -o /tmp/festival-radar-alert-candidates.json
+          else
+            echo 'No baseline: skipping alerts to avoid false new-event notifications'
+          fi
+
+      - name: Upload review-only alert candidates
+        if: ${{ hashFiles('data/festivals.json') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: festival-radar-alert-candidates
+          path: /tmp/festival-radar-alert-candidates.json
+          if-no-files-found: ignore
+          retention-days: 7
 
       - name: Commit updated dataset
         run: |
