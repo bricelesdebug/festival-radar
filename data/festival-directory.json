@@ -1,0 +1,105 @@
+{
+  "version": "v9-seed",
+  "source": "Editorial starter directory; official URLs require periodic verification",
+  "verifiedEventDates": false,
+  "note": "Festival identities and official websites only. No 2026/2027 dates, ticket availability or lineups asserted.",
+  "festivals": [
+    {
+      "id": "tomorrowland",
+      "name": "Tomorrowland",
+      "country": "Belgique",
+      "countryCode": "BE",
+      "city": "Boom",
+      "officialWebsite": "https://www.tomorrowland.com/",
+      "genres": [
+        "Electro",
+        "House",
+        "Techno"
+      ],
+      "date": null,
+      "ticketsOnSale": null,
+      "lineup": null,
+      "verificationStatus": "needs_current_verification"
+    },
+    {
+      "id": "awakenings-festival",
+      "name": "Awakenings Festival",
+      "country": "Pays-Bas",
+      "countryCode": "NL",
+      "city": "Hilvarenbeek",
+      "officialWebsite": "https://www.awakenings.com/",
+      "genres": [
+        "Techno"
+      ],
+      "date": null,
+      "ticketsOnSale": null,
+      "lineup": null,
+      "verificationStatus": "needs_current_verification"
+    },
+    {
+      "id": "sonar",
+      "name": "Sónar",
+      "country": "Espagne",
+      "countryCode": "ES",
+      "city": "Barcelone",
+      "officialWebsite": "https://sonar.es/",
+      "genres": [
+        "Electro",
+        "Techno"
+      ],
+      "date": null,
+      "ticketsOnSale": null,
+      "lineup": null,
+      "verificationStatus": "needs_current_verification"
+    },
+    {
+      "id": "time-warp",
+      "name": "Time Warp",
+      "country": "Allemagne",
+      "countryCode": "DE",
+      "city": "Mannheim",
+      "officialWebsite": "https://www.time-warp.de/",
+      "genres": [
+        "Techno",
+        "House"
+      ],
+      "date": null,
+      "ticketsOnSale": null,
+      "lineup": null,
+      "verificationStatus": "needs_current_verification"
+    },
+    {
+      "id": "kappa-futurfestival",
+      "name": "Kappa FuturFestival",
+      "country": "Italie",
+      "countryCode": "IT",
+      "city": "Turin",
+      "officialWebsite": "https://www.kappafuturfestival.it/",
+      "genres": [
+        "Techno",
+        "House"
+      ],
+      "date": null,
+      "ticketsOnSale": null,
+      "lineup": null,
+      "verificationStatus": "needs_current_verification"
+    },
+    {
+      "id": "dekmantel-festival",
+      "name": "Dekmantel Festival",
+      "country": "Pays-Bas",
+      "countryCode": "NL",
+      "city": "Amsterdam",
+      "officialWebsite": "https://www.dekmantelfestival.com/",
+      "genres": [
+        "House",
+        "Techno",
+        "Electro"
+      ],
+      "date": null,
+      "ticketsOnSale": null,
+      "lineup": null,
+      "verificationStatus": "needs_current_verification"
+    }
+  ]
+}
