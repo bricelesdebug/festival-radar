@@ -77,8 +77,10 @@ def browser_journey(email, password):
             server.shutdown()
 
 
-def run(api, browser=False):
-    checks, users, tokens, credentials = [], [], [], []
+def run(api, browser=False, checks=None):
+    if checks is None:
+        checks = []
+    users, tokens, credentials = [], [], []
     nonce = secrets.token_hex(12)
     try:
         # Admin createUser confirms the synthetic account without sending email.
@@ -167,11 +169,20 @@ def run(api, browser=False):
     finally:
         failed_cleanup = False
         for uid in users:
-            status, _ = api.call('DELETE', '/auth/v1/admin/users/'+uid, admin=True)
-            if status not in (200, 204):
+            cleaned = False
+            for _ in range(3):
+                try:
+                    status, _ = api.call('DELETE', '/auth/v1/admin/users/'+uid, admin=True)
+                    if status in (200, 204, 404):
+                        cleaned = True
+                        break
+                except RuntimeError:
+                    continue
+            if not cleaned:
                 failed_cleanup = True
         if failed_cleanup:
             raise RuntimeError('temporary_user_cleanup_failed')
+        checks.append('temporary_accounts_and_free_fixtures_cleaned_up')
         print('Temporary accounts and inactive Free fixtures cleaned up; no alert, paid subscription or email created.')
 
 
@@ -190,7 +201,7 @@ def main():
     require(base == configured_base and key, 'configured_project_or_server_secret_missing')
     report = {'passed':False, 'email_sending':False, 'billing':False, 'checks':[]}
     try:
-        report['checks'] = run(Api(base, public_key, key), browser=args.browser)
+        run(Api(base, public_key, key), browser=args.browser, checks=report['checks'])
         report['passed'] = True
     except RuntimeError as exc:
         report['failure'] = str(exc)
