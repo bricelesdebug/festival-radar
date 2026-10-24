@@ -30,7 +30,15 @@ try:
             raise SystemExit("Resend did not return a message ID.")
         print("Resend accepted the test message. Check delivery in the Resend dashboard.")
 except urllib.error.HTTPError as exc:
-    detail = exc.read().decode("utf-8", errors="replace")
-    # Avoid dumping arbitrary server error content into logs.
-    print(f"Resend request failed (HTTP {exc.code}). Check recipient verification, API key permissions and Resend dashboard.")
+    # Only print allowlisted diagnostic fields; never print headers, addresses or keys.
+    try:
+        body = json.loads(exc.read().decode("utf-8", errors="replace"))
+    except (ValueError, UnicodeError):
+        body = {}
+    code = body.get("name") or body.get("code") or "unknown"
+    if not isinstance(code, str) or len(code) > 80:
+        code = "unknown"
+    print(f"Resend rejected request: HTTP {exc.code}; error type: {code}")
+    if exc.code == 403:
+        print("Check sender domain verification, sandbox recipient restrictions, and API key permissions.")
     raise SystemExit(1)
