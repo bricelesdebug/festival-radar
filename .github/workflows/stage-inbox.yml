@@ -1,0 +1,27 @@
+name: Stage inbox notifications (manual only)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  stage-inbox:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Stage candidate notifications
+        env:
+          SUPABASE_URL: ${{ vars.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          if [ ! -f data/alert-candidates.json ]; then
+            echo 'No reviewed candidate file committed. Nothing to stage.'
+            exit 0
+          fi
+          python scripts/stage_inbox.py data/alert-candidates.json
