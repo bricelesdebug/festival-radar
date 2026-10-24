@@ -2,6 +2,8 @@ name: Compare official page text (review only)
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '47 7 * * *'
 
 concurrency:
   group: festival-radar-text-review
