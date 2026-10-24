@@ -28,11 +28,19 @@ for code,country in COUNTRIES.items():
    sale=e.get('sales',{}).get('public',{})
    classifications=e.get('classifications') or []
    genres=sorted(set(x.get('genre',{}).get('name','') for x in classifications if x.get('genre',{}).get('name')))
-   records[eid]={'id':eid,'name':name,'city':venue.get('city',{}).get('name',''),'country':country,'countryCode':code,'date':e.get('dates',{}).get('start',{}).get('localDate'),'url':link,'source':'Ticketmaster Discovery API','genres':genres,'salesStart':sale.get('startDateTime'),'salesEnd':sale.get('endDateTime'),'saleStatus':'on_sale' if sale.get('startDateTime') and sale['startDateTime']<=now.isoformat().replace('+00:00','Z') and (not sale.get('endDateTime') or sale['endDateTime']>now.isoformat().replace('+00:00','Z')) else 'unverified'}
+   # The broad API query may include unrelated music; require an explicit
+   # electronic classification before admitting the event to the catalogue.
+   electronic=any(
+       'electronic' in (x.get('genre',{}).get('name','') or '').lower()
+       or 'electronic' in (x.get('segment',{}).get('name','') or '').lower()
+       for x in classifications
+   )
+   if not electronic: continue
+   records[eid]={'id':eid,'name':name,'city':venue.get('city',{}).get('name',''),'country':country,'countryCode':code,'date':e.get('dates',{}).get('start',{}).get('localDate'),'url':link,'source':'Ticketmaster Discovery API','genres':genres,'genreScope':'electronic_broad','festivalConfidence':'unverified','salesStart':sale.get('startDateTime'),'salesEnd':sale.get('endDateTime'),'saleStatus':'on_sale' if sale.get('startDateTime') and sale['startDateTime']<=now.isoformat().replace('+00:00','Z') and (not sale.get('endDateTime') or sale['endDateTime']>now.isoformat().replace('+00:00','Z')) else 'unverified'}
   if len(events)<100: break
   time.sleep(.25)
 print(f'Collected {len(records)} festival-like events')
 if not records: raise SystemExit('No records found; preserving existing dataset')
-output={'updatedAt':now.isoformat(),'source':'Ticketmaster Discovery API','note':'Discovery API data; not independently verified. Festival classification is heuristic.','events':sorted(records.values(),key=lambda e:(e['date'] or '9999',e['name']))}
+output={'updatedAt':now.isoformat(),'source':'Ticketmaster Discovery API','note':'Discovery API data; electronic classification is broad. Festival status and techno/house subgenres are unverified.','events':sorted(records.values(),key=lambda e:(e['date'] or '9999',e['name']))}
 path=ROOT/'data'/'festivals.json'; path.write_text(json.dumps(output,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
 print('Saved',path)
