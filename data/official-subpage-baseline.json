@@ -1,0 +1,32 @@
+{
+  "https://www.tomorrowland.com/events": {
+    "digest": "51e09414a4c9c2018f2e74fd70849247354e2553db646079d4470c1a2c174fed",
+    "title": "Tomorrowland",
+    "description": "Welcome to Tomorrowland"
+  },
+  "https://www.awakenings.com/en/tickets/": {
+    "digest": "ddc46e054c63a4c74cfee17517566b88563a971d2747bbca83bbc6dd88bf071d",
+    "title": "Tickets | Awakenings",
+    "description": "Official website of Awakenings, the best techno events, all coming from the Netherlands"
+  },
+  "https://www.awakenings.com/en/artists/": {
+    "digest": "146b0c91ce4db814e3da14255e42dc223247f0e2bfea7327373704c9a64ca606",
+    "title": "Upcoming artists | Awakenings",
+    "description": "Official website of Awakenings, the best techno events, all coming from the Netherlands"
+  },
+  "https://www.time-warp.de/tickets/": {
+    "digest": "933fce495fe880afe89963da34d73279fefa05f0dc7c88fe573668519305204f",
+    "title": "Ticket Shop | Time Warp",
+    "description": ""
+  },
+  "https://www.time-warp.de/artists/": {
+    "digest": "9f1b26cdb318a956c3de1c7fc361e438fea8280b5a345cdf3bff69770df286d7",
+    "title": "Artists | Time Warp",
+    "description": ""
+  },
+  "https://www.kappafuturfestival.it/line-up-28a0": {
+    "digest": "242a8300756b55feb02744ef41d6b6c81b4be8d0faac3defbe0ac47ae9b83ad1",
+    "title": "Line Up",
+    "description": ""
+  }
+}
