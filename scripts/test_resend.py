@@ -30,15 +30,24 @@ try:
             raise SystemExit("Resend did not return a message ID.")
         print("Resend accepted the test message. Check delivery in the Resend dashboard.")
 except urllib.error.HTTPError as exc:
-    # Only print allowlisted diagnostic fields; never print headers, addresses or keys.
+    # Report only safe metadata. Strip any addresses/tokens from diagnostic text.
+    import re
+    raw = exc.read().decode("utf-8", errors="replace")
     try:
-        body = json.loads(exc.read().decode("utf-8", errors="replace"))
-    except (ValueError, UnicodeError):
+        body = json.loads(raw)
+    except ValueError:
         body = {}
-    code = body.get("name") or body.get("code") or "unknown"
-    if not isinstance(code, str) or len(code) > 80:
-        code = "unknown"
-    print(f"Resend rejected request: HTTP {exc.code}; error type: {code}")
-    if exc.code == 403:
-        print("Check sender domain verification, sandbox recipient restrictions, and API key permissions.")
+    print(f"Resend HTTP status: {exc.code}")
+    if isinstance(body, dict):
+        for field in ("name", "code", "statusCode", "message"):
+            value = body.get(field)
+            if not isinstance(value, (str, int)):
+                continue
+            value = str(value)
+            value = re.sub(r"re_[A-Za-z0-9_\\-]+", "[REDACTED_KEY]", value)
+            value = re.sub(r"[A-Za-z0-9._%+\\-]+@[A-Za-z0-9.\\-]+\\.[A-Za-z]{2,}", "[REDACTED_EMAIL]", value)
+            value = value.replace(key, "[REDACTED_KEY]").replace(recipient, "[REDACTED_EMAIL]")
+            print(f"Resend {field}: {value[:300]}")
+    else:
+        print("Resend response is not a JSON object.")
     raise SystemExit(1)
