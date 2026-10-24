@@ -1,0 +1,18 @@
+{
+  "tomorrowland": {
+    "url": "https://www.tomorrowland.com/",
+    "checkedAt": "2026-10-24T10:58:27.125850+00:00",
+    "status": "ok",
+    "title": "Tomorrowland",
+    "description": "Live Today, Love Tomorrow, Unite Forever.",
+    "digest": "222ac3606ff1195c418a87d3da8d897e45bbd67beffead37bc41f4ddd265d46d"
+  },
+  "awakenings-festival": {
+    "url": "https://www.awakenings.com/",
+    "checkedAt": "2026-10-24T10:58:27.125850+00:00",
+    "status": "ok",
+    "title": "Awakenings",
+    "description": "Official website of Awakenings, the best techno events, all coming from the Netherlands",
+    "digest": "6ae3650254317e9038260d85ea7a04c443b42231775af9511a343e6435bfb02c"
+  }
+}
