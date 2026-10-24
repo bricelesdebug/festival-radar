@@ -1,0 +1,25 @@
+name: Extract official structured event candidates
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Extract source-provided Event JSON-LD
+        run: python scripts/extract_official_events.py
+      - name: Upload review candidates
+        uses: actions/upload-artifact@v4
+        with:
+          name: official-structured-event-candidates
+          path: data/official-structured-candidates.json
+          retention-days: 14
