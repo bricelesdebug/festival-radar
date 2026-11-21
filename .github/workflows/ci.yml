@@ -1,0 +1,30 @@
+name: Verify Festival Radar
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Test collection, review gates and personalization offline
+        run: python -m unittest discover -s tests -v
+      - name: Validate the current catalog
+        run: python scripts/audit_catalog.py data/festivals.json
+      - name: Check browser scripts
+        run: |
+          python scripts/check_browser_scripts.py
+          node --check assets/radar-preview.js
+          node --test tests/browser-preview.test.cjs
+          for script in /tmp/festival-radar-script-*.mjs; do node --check "$script"; done

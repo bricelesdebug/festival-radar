@@ -7,6 +7,7 @@ The first snapshot should be a known baseline; never alert on all existing
 events merely because the old snapshot is empty.
 """
 import argparse
+import datetime as dt
 import json
 from pathlib import Path
 
@@ -17,10 +18,15 @@ def read_events(path):
     result = {}
     for event in data["events"]:
         if isinstance(event, dict) and event.get("id"):
-            result[str(event["id"])] = event
+            key = str(event["id"])
+            if key in result:
+                raise ValueError("Duplicate event ID in snapshot")
+            result[key] = event
     return result
 
 def detect(previous, current):
+    if not previous:
+        return []  # An empty baseline must never announce the whole catalog.
     changes = []
     for event_id, event in sorted(current.items()):
         old = previous.get(event_id)
@@ -36,7 +42,9 @@ def detect(previous, current):
                 changes.append({"event_key": f"{event_id}:{event_type}:{after}",
                                 "festival_id": event_id, "event_type": event_type,
                                 "payload": {"name": event.get("name"), "before": before,
-                                            "after": after, "url": event.get("url")}})
+                                            "after": after, "url": event.get("url"),
+                                            "countryCode": event.get("countryCode"),
+                                            "genres": event.get("genres", [])}})
     return changes
 
 def main():
@@ -45,6 +53,13 @@ def main():
     parser.add_argument("current")
     parser.add_argument("-o", "--output", default="data/alert-candidates.json")
     args = parser.parse_args()
+    snapshots = [json.loads(Path(p).read_text(encoding="utf-8"))
+                 for p in (args.previous, args.current)]
+    stamps = [dt.datetime.fromisoformat(d["updatedAt"].replace("Z", "+00:00")) for d in snapshots]
+    if any(t.tzinfo is None for t in stamps) or stamps[1] <= stamps[0]:
+        raise SystemExit("Snapshots must have increasing timezone-aware timestamps")
+    if any(d.get("collection", {}).get("complete") is False for d in snapshots):
+        raise SystemExit("Incomplete snapshots cannot produce alerts")
     previous, current = read_events(args.previous), read_events(args.current)
     changes = detect(previous, current)
     output = Path(args.output)

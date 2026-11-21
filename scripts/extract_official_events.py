@@ -13,7 +13,6 @@ from urllib.request import Request, urlopen
 from urllib.robotparser import RobotFileParser
 
 ROOT=Path(__file__).resolve().parents[1]
-PAGES=json.loads((ROOT/"data/official-pages-approved.json").read_text(encoding="utf-8"))["pages"]
 AGENT="FestivalRadarResearchBot"
 class Scripts(HTMLParser):
     def __init__(self): super().__init__();self.capture=False;self.parts=[];self.scripts=[]
@@ -26,14 +25,22 @@ class Scripts(HTMLParser):
         if tag=="script" and self.capture:
             self.scripts.append("".join(self.parts));self.capture=False
 def walk(node):
-    if isinstance(node,list):
-        for n in node:yield from walk(n)
-    elif isinstance(node,dict):
-        if "@graph" in node:yield from walk(node["@graph"])
-        kinds=node.get("@type",[])
-        if isinstance(kinds,str):kinds=[kinds]
-        if any(k=="Event" or k.endswith("/Event") or k.endswith("#Event") for k in kinds):
+    if isinstance(node, list):
+        for item in node:
+            yield from walk(item)
+    elif isinstance(node, dict):
+        kinds = node.get("@type", [])
+        if isinstance(kinds, str):
+            kinds = [kinds]
+        if not isinstance(kinds, list):
+            kinds = []
+        supported = {"Event", "MusicEvent", "DanceEvent", "Festival"}
+        if any(isinstance(k, str) and k.rstrip("/").split("/")[-1].split("#")[-1] in supported
+               for k in kinds):
             yield node
+        for value in node.values():
+            if isinstance(value, (dict, list)):
+                yield from walk(value)
 def summarize(ev):
     offers=ev.get("offers")
     if isinstance(offers,list):offers=offers[0] if offers else {}
@@ -47,39 +54,45 @@ def summarize(ev):
         "locationName":location.get("name"),"offerAvailability":offers.get("availability"),
         "offerUrl":offers.get("url")
     }.items() if isinstance(v,str)}
-report=[]
-for page in PAGES:
-    url=page["url"];p=urlsplit(url)
-    entry={"festival":page["festival"],"source":url,"topics":page.get("topics",[]),
-           "status":"not_checked","events":[],"reviewRequired":True}
-    if p.scheme!="https" or not p.hostname:
-        entry["status"]="invalid_url";report.append(entry);continue
-    robots=RobotFileParser()
-    robots.set_url(f"{p.scheme}://{p.netloc}/robots.txt")
-    try:robots.read();permitted=robots.can_fetch(AGENT,url)
-    except Exception:permitted=False
-    if not permitted:
-        entry["status"]="robots_unavailable_or_disallowed";report.append(entry);continue
-    try:
-        req=Request(url,headers={"User-Agent":AGENT,"Accept":"text/html"})
-        with urlopen(req,timeout=15) as response:
-            if "text/html" not in response.headers.get("Content-Type",""):
-                entry["status"]="non_html";report.append(entry);continue
-            markup=response.read(250000).decode("utf-8",errors="replace")
-        parser=Scripts();parser.feed(markup)
-        for block in parser.scripts[:20]:
-            try:
-                for event in walk(json.loads(block)):
-                    entry["events"].append(summarize(event))
-                    if len(entry["events"])>=20:break
-            except (ValueError,TypeError):continue
-        entry["status"]="ok"
-    except Exception:
-        entry["status"]="unavailable"
-    report.append(entry)
-    print(entry["festival"],entry["status"],len(entry["events"]),"structured event(s)")
-out={"note":"Source-provided structured metadata; NOT confirmed ticket release or verified lineup.",
-     "verifiedAnnouncements":0,"notificationsEnabled":False,"results":report}
-(ROOT/"data/official-structured-candidates.json").write_text(
-    json.dumps(out,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-print("No notifications or emails sent.")
+def main():
+    PAGES=json.loads((ROOT/"data/official-pages-approved.json").read_text(encoding="utf-8"))["pages"]
+    report=[]
+    for page in PAGES:
+        url=page["url"];p=urlsplit(url)
+        entry={"festival":page["festival"],"source":url,"topics":page.get("topics",[]),
+               "status":"not_checked","events":[],"reviewRequired":True}
+        if p.scheme!="https" or not p.hostname:
+            entry["status"]="invalid_url";report.append(entry);continue
+        robots=RobotFileParser()
+        robots.set_url(f"{p.scheme}://{p.netloc}/robots.txt")
+        try:robots.read();permitted=robots.can_fetch(AGENT,url)
+        except Exception:permitted=False
+        if not permitted:
+            entry["status"]="robots_unavailable_or_disallowed";report.append(entry);continue
+        try:
+            req=Request(url,headers={"User-Agent":AGENT,"Accept":"text/html"})
+            with urlopen(req,timeout=15) as response:
+                if "text/html" not in response.headers.get("Content-Type",""):
+                    entry["status"]="non_html";report.append(entry);continue
+                markup=response.read(250000).decode("utf-8",errors="replace")
+            parser=Scripts();parser.feed(markup)
+            for block in parser.scripts[:20]:
+                try:
+                    for event in walk(json.loads(block)):
+                        entry["events"].append(summarize(event))
+                        if len(entry["events"])>=20:break
+                except (ValueError,TypeError):continue
+            entry["status"]="ok"
+        except Exception:
+            entry["status"]="unavailable"
+        report.append(entry)
+        print(entry["festival"],entry["status"],len(entry["events"]),"structured event(s)")
+    out={"note":"Source-provided structured metadata; NOT confirmed ticket release or verified lineup.",
+         "verifiedAnnouncements":0,"notificationsEnabled":False,"results":report}
+    (ROOT/"data/official-structured-candidates.json").write_text(
+        json.dumps(out,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    print("No notifications or emails sent.")
+
+
+if __name__ == "__main__":
+    main()

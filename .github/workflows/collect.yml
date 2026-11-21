@@ -16,7 +16,7 @@ permissions:
 jobs:
   collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 25
 
     steps:
       - uses: actions/checkout@v4
@@ -47,18 +47,6 @@ jobs:
             echo 'No baseline: skipping alerts to avoid false new-event notifications'
           fi
 
-      - name: Stage private notifications for confirmed date-field changes
-        if: ${{ hashFiles('data/festivals.json') != '' }}
-        env:
-          SUPABASE_URL: ${{ vars.SUPABASE_URL }}
-          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
-        run: |
-          if [ -f /tmp/festival-radar-alert-candidates.json ]; then
-            python scripts/stage_inbox.py /tmp/festival-radar-alert-candidates.json --automatic
-          else
-            echo "No previous snapshot: no inbox updates"
-          fi
-
       - name: Upload review-only alert candidates
         if: ${{ hashFiles('data/festivals.json') != '' }}
         uses: actions/upload-artifact@v4
@@ -68,7 +56,17 @@ jobs:
           if-no-files-found: ignore
           retention-days: 7
 
+      - name: Upload collection health report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: collection-health
+          path: /tmp/festival-radar-collection-report.json
+          if-no-files-found: ignore
+          retention-days: 14
+
       - name: Commit updated dataset
+        if: github.ref == 'refs/heads/main'
         run: |
           git config user.name "festival-radar-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

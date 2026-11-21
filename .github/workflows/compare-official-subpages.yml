@@ -32,6 +32,7 @@ jobs:
             data/official-subpage-changes.json
           retention-days: 14
       - name: Persist comparison baseline
+        if: github.ref == 'refs/heads/main'
         run: |
           git config user.name "festival-radar-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

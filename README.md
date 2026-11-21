@@ -1,7 +1,7 @@
 # Festival Radar V2 — collecte automatique
 
 ## Fonctionnement
-- Un script Python interroge l'API officielle Ticketmaster Discovery pour 15 pays européens, en ciblant la classification Electronic et des noms évoquant des festivals.
+- Un script Python interroge l'API officielle Ticketmaster Discovery pour 24 pays européens, en ciblant la classification Electronic et des noms évoquant des festivals.
 - GitHub Actions le lance toutes les 6 heures, puis enregistre les résultats dans `data/festivals.json`.
 - Netlify publie automatiquement le nouveau JSON **si** le site est connecté au dépôt GitHub avec déploiement automatique activé.
 - Le site affiche les résultats sourcés, la date de collecte et des liens Ticketmaster. Aucun événement de billetterie ou de lineup n'est encore envoyé par email.
@@ -19,6 +19,10 @@
 - La classification API et la recherche par nom ne garantissent pas que tous les événements sont de vrais festivals ou que tous les festivals sont couverts. Un contrôle éditorial est nécessaire.
 - La disponibilité des événements dépend de la couverture Ticketmaster et des limites d'API ; les sites officiels indépendants ne sont pas encore intégrés.
 - La date de début des ventes, quand disponible, est indicative ; l'API ne garantit pas la disponibilité de billets.
-- Si une requête échoue, le script peut produire un ensemble incomplet. Ajouter ensuite surveillance, alertes de panne et validation des sources.
+- Si un pays échoue, si la pagination atteint sa limite ou si les résultats sont vides, la collecte conserve le catalogue précédent. Un rapport de santé est disponible dans les artefacts Actions.
 - Les mises à jour GitHub ne seront pas visibles sur Netlify si celui-ci reste en déploiement manuel.
 - Pour les véritables alertes « nouvel événement », « nouvelle date », « billetterie ouverte », il faudra comparer les instantanés, historiser les changements, vérifier les statuts, puis ajouter les notifications opt-in.
+
+## Développement actuel
+
+Voir [DEVELOPMENT.md](DEVELOPMENT.md) pour les garde-fous, les tests, les aperçus personnalisés et la préparation Premium. Emails, écritures automatiques de notifications et paiements restent désactivés dans cette version.
