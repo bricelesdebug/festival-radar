@@ -1,66 +1,112 @@
 {
-  "updatedAt": "2026-10-24T12:57:24.137405+00:00",
+  "updatedAt": "2026-11-22T01:27:21.025300+00:00",
   "source": "Ticketmaster Discovery API",
-  "note": "Discovery API data; electronic classification is broad. Festival status and techno/house subgenres are unverified.",
+  "collection": {
+    "updatedAt": "2026-11-22T01:27:21.025300+00:00",
+    "complete": true,
+    "countries": {
+      "BE": {
+        "status": "complete",
+        "scanned": 32
+      },
+      "NL": {
+        "status": "complete",
+        "scanned": 84
+      },
+      "FR": {
+        "status": "complete",
+        "scanned": 0
+      },
+      "DE": {
+        "status": "complete",
+        "scanned": 57
+      },
+      "ES": {
+        "status": "complete",
+        "scanned": 18
+      },
+      "IT": {
+        "status": "complete",
+        "scanned": 18
+      },
+      "PT": {
+        "status": "complete",
+        "scanned": 0
+      },
+      "GB": {
+        "status": "complete",
+        "scanned": 614
+      },
+      "CH": {
+        "status": "complete",
+        "scanned": 19
+      },
+      "AT": {
+        "status": "complete",
+        "scanned": 3
+      },
+      "PL": {
+        "status": "complete",
+        "scanned": 86
+      },
+      "CZ": {
+        "status": "complete",
+        "scanned": 29
+      },
+      "HR": {
+        "status": "complete",
+        "scanned": 0
+      },
+      "HU": {
+        "status": "complete",
+        "scanned": 0
+      },
+      "DK": {
+        "status": "complete",
+        "scanned": 28
+      },
+      "SE": {
+        "status": "complete",
+        "scanned": 13
+      },
+      "IE": {
+        "status": "complete",
+        "scanned": 51
+      },
+      "NO": {
+        "status": "complete",
+        "scanned": 16
+      },
+      "FI": {
+        "status": "complete",
+        "scanned": 1
+      },
+      "EE": {
+        "status": "complete",
+        "scanned": 0
+      },
+      "LV": {
+        "status": "complete",
+        "scanned": 0
+      },
+      "LT": {
+        "status": "complete",
+        "scanned": 0
+      },
+      "RO": {
+        "status": "complete",
+        "scanned": 0
+      },
+      "GR": {
+        "status": "complete",
+        "scanned": 0
+      }
+    },
+    "failedCountries": [],
+    "candidateCount": 20
+  },
+  "note": "Discovery candidates only; festival identity and ticket availability require review.",
   "events": [
-    {
-      "id": "Z698xZ2qZ1k_4x6ad",
-      "name": "Nocturna Festival",
-      "city": "Barcelona",
-      "country": "Espagne",
-      "countryCode": "ES",
-      "date": "2026-10-31",
-      "url": "https://www.ticketmaster.es/event/nocturna-festival-tickets/655887243?language=en-us",
-      "source": "Ticketmaster Discovery API",
-      "genres": [
-        "Dance/Electronic"
-      ],
-      "genreScope": "electronic_broad",
-      "festivalConfidence": "unverified",
-      "salesStart": "2026-06-15T16:00:00Z",
-      "salesEnd": "2026-10-31T19:00:00Z",
-      "saleStatus": "on_sale"
-    },
-    {
-      "id": "17u8v0G629NR6EJ",
-      "name": "La Discotheque Festival, Manchester",
-      "city": "Manchester",
-      "country": "Royaume-Uni",
-      "countryCode": "GB",
-      "date": "2026-11-07",
-      "url": "https://www.ticketmaster.co.uk/la-discotheque-festival-manchester-manchester-07-11-2026/event/350064F5E3BC79E6",
-      "source": "Ticketmaster Discovery API",
-      "genres": [
-        "Dance/Electronic"
-      ],
-      "genreScope": "electronic_broad",
-      "festivalConfidence": "unverified",
-      "salesStart": "2026-07-31T11:00:00Z",
-      "salesEnd": "2026-11-07T18:00:00Z",
-      "saleStatus": "on_sale"
-    },
-    {
-      "id": "Z698xZQpZ1k-V1KoM",
-      "name": "One Love Wrocław Music Festival 2026",
-      "city": "Wroclaw",
-      "country": "Pologne",
-      "countryCode": "PL",
-      "date": "2026-11-21",
-      "url": "https://www.ticketmaster.pl/event/one-love-wrocaw-music-festival-2026-tickets/874293477?language=en-us",
-      "source": "Ticketmaster Discovery API",
-      "genres": [
-        "Alternative",
-        "Dance/Electronic",
-        "Pop",
-        "R&B",
-        "Rock"
-      ],
-      "genreScope": "electronic_broad",
-      "festivalConfidence": "unverified",
-      "salesStart": "2026-07-16T09:00:00Z",
-      "salesEnd": "2026-11-21T22:59:00Z",
-      "saleStatus": "on_sale"
-    },
     {
       "id": "Z698xZu3Z16v7-Pzjk",
       "name": "Tension Winter Festival 2026 | Friday",
@@ -77,7 +123,8 @@
       "festivalConfidence": "unverified",
       "salesStart": "2026-08-12T13:27:00Z",
       "salesEnd": "2026-11-28T04:00:00Z",
-      "saleStatus": "on_sale"
+      "eventStatus": "onsale",
+      "saleStatus": "unverified"
     },
     {
       "id": "Z698xZu3Z16v7K4-Zv",
@@ -95,7 +142,8 @@
       "festivalConfidence": "unverified",
       "salesStart": "2026-07-08T10:00:00Z",
       "salesEnd": "2026-11-28T22:59:00Z",
-      "saleStatus": "on_sale"
+      "eventStatus": "onsale",
+      "saleStatus": "unverified"
     },
     {
       "id": "Z698xZu3Z16v7OPvA7",
@@ -113,61 +161,48 @@
       "festivalConfidence": "unverified",
       "salesStart": "2026-08-12T14:06:00Z",
       "salesEnd": "2026-11-29T04:00:00Z",
-      "saleStatus": "on_sale"
+      "eventStatus": "onsale",
+      "saleStatus": "unverified"
     },
     {
-      "id": "Z698xZQpZ1k8s_dAt",
-      "name": "Festiwal Muzyki Disco Szczecin - Hype Disco Festiwal",
-      "city": "Szczecin",
-      "country": "Pologne",
-      "countryCode": "PL",
-      "date": "2026-12-12",
-      "url": "https://www.ticketmaster.pl/event/festiwal-muzyki-disco-szczecin-hype-disco-festiwal-tickets/431643169?language=en-us",
+      "id": "Z698xZu3Z16vJebxpZ",
+      "name": "SnowRow Festival Arosa | Weekend Pass (18.-20.12.2026)",
+      "city": "Switzerland",
+      "country": "Suisse",
+      "countryCode": "CH",
+      "date": "2026-12-18",
+      "url": "https://www.ticketmaster.ch/event/snowrow-festival-arosa-%7C-weekend-pass-18-20122026--tickets/1982622580?language=en-us",
       "source": "Ticketmaster Discovery API",
       "genres": [
+        "Club Dance",
         "Dance/Electronic"
       ],
       "genreScope": "electronic_broad",
       "festivalConfidence": "unverified",
-      "salesStart": "2026-09-25T12:37:00Z",
-      "salesEnd": "2026-12-12T17:59:00Z",
-      "saleStatus": "on_sale"
+      "salesStart": "2026-11-12T09:14:00Z",
+      "salesEnd": "2026-12-19T22:00:00Z",
+      "eventStatus": "onsale",
+      "saleStatus": "unverified"
     },
     {
-      "id": "Z698xZQpZ16vp93d-F",
-      "name": "Festiwal Muzyki Disco Lublin - Hype Disco Festiwal",
-      "city": "Lublin",
-      "country": "Pologne",
-      "countryCode": "PL",
-      "date": "2026-12-19",
-      "url": "https://www.ticketmaster.pl/event/festiwal-muzyki-disco-lublin-hype-disco-festiwal-tickets/1597483848?language=en-us",
+      "id": "G5dzZ_4BWk6P-",
+      "name": "LOVE THE 90s FESTIVAL ",
+      "city": "Edinburgh",
+      "country": "Royaume-Uni",
+      "countryCode": "GB",
+      "date": "2027-03-20",
+      "url": "https://www.ticketmaster.co.uk/love-the-90s-festival-edinburgh-20-03-2027/event/3E00655EBD187961",
       "source": "Ticketmaster Discovery API",
       "genres": [
+        "Amapiano",
         "Dance/Electronic"
       ],
       "genreScope": "electronic_broad",
       "festivalConfidence": "unverified",
-      "salesStart": "2026-09-25T10:04:00Z",
-      "salesEnd": "2026-12-19T22:59:00Z",
-      "saleStatus": "on_sale"
-    },
-    {
-      "id": "Z698xZQpZ1k--4Pfb",
-      "name": "Festiwal Muzyki Disco Wrocław - Hype Disco Festiwal",
-      "city": "Wroclaw",
-      "country": "Pologne",
-      "countryCode": "PL",
-      "date": "2027-02-12",
-      "url": "https://www.ticketmaster.pl/event/festiwal-muzyki-disco-wrocaw-hype-disco-festiwal-tickets/861565518?language=en-us",
-      "source": "Ticketmaster Discovery API",
-      "genres": [
-        "Dance/Electronic"
-      ],
-      "genreScope": "electronic_broad",
-      "festivalConfidence": "unverified",
-      "salesStart": "2026-09-25T09:14:00Z",
-      "salesEnd": "2027-02-12T18:59:00Z",
-      "saleStatus": "on_sale"
+      "salesStart": "2026-11-05T10:00:00Z",
+      "salesEnd": "2027-03-20T12:00:00Z",
+      "eventStatus": "onsale",
+      "saleStatus": "unverified"
     },
     {
       "id": "Z698xZC2Z16vr3epZy",
@@ -186,43 +221,202 @@
       "festivalConfidence": "unverified",
       "salesStart": "2026-03-23T10:25:00Z",
       "salesEnd": "2027-03-20T22:59:00Z",
-      "saleStatus": "on_sale"
+      "eventStatus": "onsale",
+      "saleStatus": "unverified"
     },
     {
-      "id": "Z698xZbpZ16vFEAIOy",
-      "name": "High Tea Indoor Festeaval 2027",
-      "city": "Amsterdam",
-      "country": "Pays-Bas",
-      "countryCode": "NL",
-      "date": "2027-04-10",
-      "url": "https://www.ticketmaster.nl/event/high-tea-indoor-festeaval-2027-tickets/1227168839?language=en-us",
+      "id": "1AvOZ_KGkBs5qyo",
+      "name": "Disco Fest 2027",
+      "city": "Dublin",
+      "country": "Irlande",
+      "countryCode": "IE",
+      "date": "2027-04-11",
+      "url": "https://www.ticketmaster.ie/disco-fest-2027-dublin-11-04-2027/event/1800653EB12DDE51",
+      "source": "Ticketmaster Discovery API",
+      "genres": [
+        "Amapiano",
+        "Dance/Electronic"
+      ],
+      "genreScope": "electronic_broad",
+      "festivalConfidence": "unverified",
+      "salesStart": "2026-11-06T10:00:00Z",
+      "salesEnd": "2027-04-11T18:00:00Z",
+      "eventStatus": "onsale",
+      "saleStatus": "unverified"
+    },
+    {
+      "id": "LvZ18QmccYh5uS-xhJXfM",
+      "name": "Brixton Disco Festival 2027",
+      "city": "London",
+      "country": "Royaume-Uni",
+      "countryCode": "GB",
+      "date": "2027-05-01",
+      "url": "https://www.universe.com/events/brixton-disco-festival-2027-tickets-VNGZ05?ref=ticketmaster",
       "source": "Ticketmaster Discovery API",
       "genres": [
         "Dance/Electronic"
       ],
       "genreScope": "electronic_broad",
       "festivalConfidence": "unverified",
-      "salesStart": "2026-08-21T08:00:00Z",
-      "salesEnd": "2027-04-11T01:00:00Z",
-      "saleStatus": "on_sale"
+      "salesStart": "2026-11-19T12:00:00Z",
+      "salesEnd": "2027-05-02T01:00:00Z",
+      "eventStatus": "onsale",
+      "saleStatus": "unverified"
     },
     {
-      "id": "Z698xZQpZ16vFtAxas",
-      "name": "Festiwal Muzyki Disco Łódź - Hype Disco Festiwal",
-      "city": "Łódź ",
-      "country": "Pologne",
-      "countryCode": "PL",
-      "date": "2027-04-18",
-      "url": "https://www.ticketmaster.pl/event/festiwal-muzyki-disco-lodz-hype-disco-festiwal-tickets/1229162271?language=en-us",
+      "id": "LvZ18QcF30i71F1LG2K_4",
+      "name": "Where We Belong Festival 2027",
+      "city": "Bristol",
+      "country": "Royaume-Uni",
+      "countryCode": "GB",
+      "date": "2027-05-15",
+      "url": "https://www.universe.com/events/where-we-belong-festival-2027-tickets-1J3K04?ref=ticketmaster",
       "source": "Ticketmaster Discovery API",
       "genres": [
         "Dance/Electronic"
       ],
       "genreScope": "electronic_broad",
       "festivalConfidence": "unverified",
-      "salesStart": "2026-09-25T12:04:00Z",
-      "salesEnd": "2027-04-18T16:59:00Z",
-      "saleStatus": "on_sale"
+      "salesStart": "2026-10-30T10:00:00Z",
+      "salesEnd": "2027-05-15T22:00:00Z",
+      "eventStatus": "onsale",
+      "saleStatus": "unverified"
+    },
+    {
+      "id": "LvZ18Q-BNWyM3wZvLraWh",
+      "name": "Terminal V Festival 2027",
+      "city": "Glasgow",
+      "country": "Royaume-Uni",
+      "countryCode": "GB",
+      "date": "2027-06-04",
+      "url": "https://www.universe.com/events/terminal-v-festival-2027-tickets-V5Y14M?ref=ticketmaster",
+      "source": "Ticketmaster Discovery API",
+      "genres": [
+        "Club Dance",
+        "Dance/Electronic"
+      ],
+      "genreScope": "electronic_broad",
+      "festivalConfidence": "unverified",
+      "salesStart": "2026-06-03T09:00:00Z",
+      "salesEnd": "2027-06-06T21:30:00Z",
+      "eventStatus": "onsale",
+      "saleStatus": "unverified"
+    },
+    {
+      "id": "LvZ18QR9b9OHWhMTd9Bmw",
+      "name": "Glorious Day Festival 2027",
+      "city": "Brighton",
+      "country": "Royaume-Uni",
+      "countryCode": "GB",
+      "date": "2027-06-05",
+      "url": "https://www.universe.com/events/glorious-day-festival-2027-tickets-XCYPF7?ref=ticketmaster",
+      "source": "Ticketmaster Discovery API",
+      "genres": [
+        "Club Dance",
+        "Dance/Electronic"
+      ],
+      "genreScope": "electronic_broad",
+      "festivalConfidence": "unverified",
+      "salesStart": "2026-11-27T10:00:00Z",
+      "salesEnd": "2027-06-05T21:30:00Z",
+      "eventStatus": "offsale",
+      "saleStatus": "unverified"
+    },
+    {
+      "id": "Z698xZu3Z16vfV0eqY",
+      "name": "alba Festival 2027 | 2 day ticket (19.-20.06.2027)",
+      "city": "Zürich",
+      "country": "Suisse",
+      "countryCode": "CH",
+      "date": "2027-06-19",
+      "url": "https://www.ticketmaster.ch/event/alba-festival-2027-%7C-2-day-ticket-19-20062027--tickets/1534902770?language=en-us",
+      "source": "Ticketmaster Discovery API",
+      "genres": [
+        "Alternative",
+        "Dance/Electronic",
+        "Folk",
+        "Hip-Hop/Rap",
+        "House",
+        "Other",
+        "Pop",
+        "Pop Rock",
+        "Rock",
+        "Undefined"
+      ],
+      "genreScope": "electronic_broad",
+      "festivalConfidence": "unverified",
+      "salesStart": "2026-11-10T11:00:00Z",
+      "salesEnd": "2027-06-19T21:59:00Z",
+      "eventStatus": "onsale",
+      "saleStatus": "unverified"
+    },
+    {
+      "id": "Z698xZu3Z1kA61886",
+      "name": "alba Festival 2027 | 2 day ticket VIP (19.-20.06.2027)",
+      "city": "Zürich",
+      "country": "Suisse",
+      "countryCode": "CH",
+      "date": "2027-06-19",
+      "url": "https://www.ticketmaster.ch/event/alba-festival-2027-%7C-2-day-ticket-vip-19-20062027--tickets/147290407?language=en-us",
+      "source": "Ticketmaster Discovery API",
+      "genres": [
+        "Alternative",
+        "Dance/Electronic",
+        "Folk",
+        "Hip-Hop/Rap",
+        "House",
+        "Other",
+        "Pop",
+        "Pop Rock",
+        "Rock",
+        "Undefined"
+      ],
+      "genreScope": "electronic_broad",
+      "festivalConfidence": "unverified",
+      "salesStart": "2026-11-10T11:00:00Z",
+      "salesEnd": "2027-06-19T21:59:00Z",
+      "eventStatus": "onsale",
+      "saleStatus": "unverified"
+    },
+    {
+      "id": "17u8v0G6CVtr-Dx",
+      "name": "Lytham Festival - Fatboy Slim + special guest Becky Hill",
+      "city": "Lancashire",
+      "country": "Royaume-Uni",
+      "countryCode": "GB",
+      "date": "2027-07-02",
+      "url": "https://www.ticketmaster.co.uk/lytham-festival-fatboy-slim-special-guest-lancashire-02-07-2027/event/350064ED297A1EE2",
+      "source": "Ticketmaster Discovery API",
+      "genres": [
+        "Amapiano",
+        "Dance/Electronic"
+      ],
+      "genreScope": "electronic_broad",
+      "festivalConfidence": "unverified",
+      "salesStart": "2026-09-04T08:00:00Z",
+      "salesEnd": "2027-07-02T20:30:00Z",
+      "eventStatus": "onsale",
+      "saleStatus": "unverified"
+    },
+    {
+      "id": "17u8v0G6CJIDyr2",
+      "name": "Lytham Festival - Fatboy Slim + special guest Becky Hill - Transport",
+      "city": "Lancashire",
+      "country": "Royaume-Uni",
+      "countryCode": "GB",
+      "date": "2027-07-02",
+      "url": "https://www.ticketmaster.co.uk/lytham-festival-fatboy-slim-special-guest-lancashire-02-07-2027/event/350064E9A8EF978F",
+      "source": "Ticketmaster Discovery API",
+      "genres": [
+        "Amapiano",
+        "Dance/Electronic"
+      ],
+      "genreScope": "electronic_broad",
+      "festivalConfidence": "unverified",
+      "salesStart": "2026-09-04T08:00:00Z",
+      "salesEnd": "2027-07-02T16:00:00Z",
+      "eventStatus": "onsale",
+      "saleStatus": "unverified"
     },
     {
       "id": "Z698xZ2qZ16v3dGUAP",
@@ -234,9 +428,11 @@
       "url": "https://www.ticketmaster.es/event/vida-festival-2027-tickets/1483336165?language=en-us",
       "source": "Ticketmaster Discovery API",
       "genres": [
+        "Club Dance",
         "Dance/Electronic",
         "Folk",
         "Hip-Hop/Rap",
+        "Latin Hip-Hop",
         "Pop",
         "Rock",
         "Undefined"
@@ -245,7 +441,8 @@
       "festivalConfidence": "unverified",
       "salesStart": "2026-07-07T07:30:00Z",
       "salesEnd": "2027-07-03T21:59:00Z",
-      "saleStatus": "on_sale"
+      "eventStatus": "onsale",
+      "saleStatus": "unverified"
     },
     {
       "id": "Z698xZu3Z16vqY8Jpo",
@@ -257,16 +454,40 @@
       "url": "https://www.ticketmaster.ch/event/openair-frauenfeld-2027-%7C-vip-festival-ticket-tickets/1770426591?language=en-us",
       "source": "Ticketmaster Discovery API",
       "genres": [
+        "British Rap",
         "Dance/Electronic",
         "Hip-Hop/Rap",
+        "Party Rap",
         "R&B",
-        "Reggae"
+        "Reggae",
+        "Urban"
       ],
       "genreScope": "electronic_broad",
       "festivalConfidence": "unverified",
       "salesStart": "2026-07-24T10:00:00Z",
       "salesEnd": "2027-07-11T02:00:00Z",
-      "saleStatus": "on_sale"
+      "eventStatus": "onsale",
+      "saleStatus": "unverified"
+    },
+    {
+      "id": "G5vHZ_23YN3fp",
+      "name": "Lost Minds Festival 2027",
+      "city": "Newcastle",
+      "country": "Royaume-Uni",
+      "countryCode": "GB",
+      "date": "2027-07-10",
+      "url": "https://www.ticketmaster.co.uk/lost-minds-festival-2027-newcastle-10-07-2027/event/1F0064F4B08D2516",
+      "source": "Ticketmaster Discovery API",
+      "genres": [
+        "Amapiano",
+        "Dance/Electronic"
+      ],
+      "genreScope": "electronic_broad",
+      "festivalConfidence": "unverified",
+      "salesStart": "2026-07-31T09:00:00Z",
+      "salesEnd": "2027-07-10T11:00:00Z",
+      "eventStatus": "onsale",
+      "saleStatus": "unverified"
     },
     {
       "id": "Z698xZC2Z1kPy4P0v",
@@ -284,25 +505,28 @@
       "festivalConfidence": "unverified",
       "salesStart": "2026-07-27T10:00:00Z",
       "salesEnd": "2027-07-18T09:00:00Z",
-      "saleStatus": "on_sale"
+      "eventStatus": "onsale",
+      "saleStatus": "unverified"
     },
     {
-      "id": "Z698xZQpZ16vF7jxq8",
-      "name": "Festiwal Muzyki Disco Trójmiasto - Hype Disco Festiwal",
-      "city": "Gdańsk/Sopot",
-      "country": "Pologne",
-      "countryCode": "PL",
-      "date": "2027-11-20",
-      "url": "https://www.ticketmaster.pl/event/festiwal-muzyki-disco-trojmiasto-hype-disco-festiwal-tickets/1204722750?language=en-us",
+      "id": "ZG9rmIYnyZdkAd",
+      "name": "11 Agosto - 1 Day - Color Fest 15 | Chi vive in Calabria, chi vive d’amore",
+      "city": "Lamezia Terme",
+      "country": "Italie",
+      "countryCode": "IT",
+      "date": "2027-08-11",
+      "url": "https://www.ticketmaster.it/biglietti/11-agosto-1-day-color-fest-15-lamezia-terme-11-08-2027/event/hnmtry0smqfo",
       "source": "Ticketmaster Discovery API",
       "genres": [
+        "Club Dance",
         "Dance/Electronic"
       ],
       "genreScope": "electronic_broad",
       "festivalConfidence": "unverified",
-      "salesStart": "2026-09-25T11:22:00Z",
-      "salesEnd": "2027-11-20T22:59:00Z",
-      "saleStatus": "on_sale"
+      "salesStart": "2026-11-18T10:00:00Z",
+      "salesEnd": "2027-08-11T14:30:00Z",
+      "eventStatus": "onsale",
+      "saleStatus": "unverified"
     }
   ]
 }
