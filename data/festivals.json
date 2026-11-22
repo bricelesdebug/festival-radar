@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-11-22T13:14:06.998946+00:00",
+  "updatedAt": "2026-11-22T19:05:59.693275+00:00",
   "source": "Ticketmaster Discovery API",
   "collection": {
-    "updatedAt": "2026-11-22T13:14:06.998946+00:00",
+    "updatedAt": "2026-11-22T19:05:59.693275+00:00",
     "complete": true,
     "countries": {
       "BE": {
@@ -11,7 +11,7 @@
       },
       "NL": {
         "status": "complete",
-        "scanned": 84
+        "scanned": 83
       },
       "FR": {
         "status": "complete",
@@ -35,7 +35,7 @@
       },
       "GB": {
         "status": "complete",
-        "scanned": 614
+        "scanned": 613
       },
       "CH": {
         "status": "complete",
@@ -47,11 +47,11 @@
       },
       "PL": {
         "status": "complete",
-        "scanned": 86
+        "scanned": 85
       },
       "CZ": {
         "status": "complete",
-        "scanned": 29
+        "scanned": 27
       },
       "HR": {
         "status": "complete",
@@ -63,7 +63,7 @@
       },
       "DK": {
         "status": "complete",
-        "scanned": 28
+        "scanned": 27
       },
       "SE": {
         "status": "complete",
@@ -297,9 +297,9 @@
       ],
       "genreScope": "electronic_broad",
       "festivalConfidence": "unverified",
-      "salesStart": "2026-06-03T09:00:00Z",
+      "salesStart": "2026-11-27T10:00:00Z",
       "salesEnd": "2027-06-06T21:30:00Z",
-      "eventStatus": "onsale",
+      "eventStatus": "offsale",
       "saleStatus": "unverified"
     },
     {
