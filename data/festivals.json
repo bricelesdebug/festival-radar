@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-11-23T07:45:52.941605+00:00",
+  "updatedAt": "2026-11-23T23:58:04.607401+00:00",
   "source": "Ticketmaster Discovery API",
   "collection": {
-    "updatedAt": "2026-11-23T07:45:52.941605+00:00",
+    "updatedAt": "2026-11-23T23:58:04.607401+00:00",
     "complete": true,
     "countries": {
       "BE": {
@@ -19,11 +19,11 @@
       },
       "DE": {
         "status": "complete",
-        "scanned": 57
+        "scanned": 60
       },
       "ES": {
         "status": "complete",
-        "scanned": 17
+        "scanned": 15
       },
       "IT": {
         "status": "complete",
@@ -35,7 +35,7 @@
       },
       "GB": {
         "status": "complete",
-        "scanned": 612
+        "scanned": 639
       },
       "CH": {
         "status": "complete",
@@ -47,11 +47,11 @@
       },
       "PL": {
         "status": "complete",
-        "scanned": 85
+        "scanned": 83
       },
       "CZ": {
         "status": "complete",
-        "scanned": 27
+        "scanned": 25
       },
       "HR": {
         "status": "complete",
@@ -71,11 +71,11 @@
       },
       "IE": {
         "status": "complete",
-        "scanned": 51
+        "scanned": 54
       },
       "NO": {
         "status": "complete",
-        "scanned": 16
+        "scanned": 17
       },
       "FI": {
         "status": "complete",
@@ -103,7 +103,7 @@
       }
     },
     "failedCountries": [],
-    "candidateCount": 20
+    "candidateCount": 21
   },
   "note": "Discovery candidates only; festival identity and ticket availability require review.",
   "events": [
@@ -319,6 +319,25 @@
       "festivalConfidence": "unverified",
       "salesStart": "2026-11-27T10:00:00Z",
       "salesEnd": "2027-06-05T21:30:00Z",
+      "eventStatus": "offsale",
+      "saleStatus": "unverified"
+    },
+    {
+      "id": "LvZ18QY8Pi7E0g04QIO-I",
+      "name": "Goodlife Festival 2027",
+      "city": "Leeds",
+      "country": "Royaume-Uni",
+      "countryCode": "GB",
+      "date": "2027-06-12",
+      "url": "https://www.universe.com/events/goodlife-festival-2027-tickets-VHFC23?ref=ticketmaster",
+      "source": "Ticketmaster Discovery API",
+      "genres": [
+        "Dance/Electronic"
+      ],
+      "genreScope": "electronic_broad",
+      "festivalConfidence": "unverified",
+      "salesStart": "2026-11-27T10:00:00Z",
+      "salesEnd": "2027-06-12T22:00:00Z",
       "eventStatus": "offsale",
       "saleStatus": "unverified"
     },
