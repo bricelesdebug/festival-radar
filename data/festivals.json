@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-11-24T09:59:23.548168+00:00",
+  "updatedAt": "2026-11-24T22:30:24.149616+00:00",
   "source": "Ticketmaster Discovery API",
   "collection": {
-    "updatedAt": "2026-11-24T09:59:23.548168+00:00",
+    "updatedAt": "2026-11-24T22:30:24.149616+00:00",
     "complete": true,
     "countries": {
       "BE": {
@@ -23,11 +23,11 @@
       },
       "ES": {
         "status": "complete",
-        "scanned": 15
+        "scanned": 13
       },
       "IT": {
         "status": "complete",
-        "scanned": 18
+        "scanned": 20
       },
       "PT": {
         "status": "complete",
@@ -35,11 +35,11 @@
       },
       "GB": {
         "status": "complete",
-        "scanned": 640
+        "scanned": 645
       },
       "CH": {
         "status": "complete",
-        "scanned": 19
+        "scanned": 21
       },
       "AT": {
         "status": "complete",
@@ -47,7 +47,7 @@
       },
       "PL": {
         "status": "complete",
-        "scanned": 83
+        "scanned": 82
       },
       "CZ": {
         "status": "complete",
@@ -75,7 +75,7 @@
       },
       "NO": {
         "status": "complete",
-        "scanned": 17
+        "scanned": 19
       },
       "FI": {
         "status": "complete",
@@ -103,7 +103,7 @@
       }
     },
     "failedCountries": [],
-    "candidateCount": 21
+    "candidateCount": 26
   },
   "note": "Discovery candidates only; festival identity and ticket availability require review.",
   "events": [
@@ -398,6 +398,63 @@
       "saleStatus": "unverified"
     },
     {
+      "id": "LvZ18Qxt0KwketOvOY_Xf",
+      "name": "AERO Festival I Freitag",
+      "city": "Belp",
+      "country": "Suisse",
+      "countryCode": "CH",
+      "date": "2027-06-25",
+      "url": "https://www.universe.com/events/aero-festival-i-freitag-tickets-6CDB59?ref=ticketmaster",
+      "source": "Ticketmaster Discovery API",
+      "genres": [
+        "Dance/Electronic"
+      ],
+      "genreScope": "electronic_broad",
+      "festivalConfidence": "unverified",
+      "salesStart": "2026-11-24T23:00:00Z",
+      "salesEnd": "2027-06-25T22:00:00Z",
+      "eventStatus": "offsale",
+      "saleStatus": "unverified"
+    },
+    {
+      "id": "LvZ18QNR4d3NL1GQRRbSj",
+      "name": "AERO Festival I Weekend-Pass",
+      "city": "Belp",
+      "country": "Suisse",
+      "countryCode": "CH",
+      "date": "2027-06-25",
+      "url": "https://www.universe.com/events/aero-festival-i-weekend-pass-tickets-9V1GWK?ref=ticketmaster",
+      "source": "Ticketmaster Discovery API",
+      "genres": [
+        "Dance/Electronic"
+      ],
+      "genreScope": "electronic_broad",
+      "festivalConfidence": "unverified",
+      "salesStart": "2026-11-24T23:00:00Z",
+      "salesEnd": "2027-06-26T22:00:00Z",
+      "eventStatus": "offsale",
+      "saleStatus": "unverified"
+    },
+    {
+      "id": "LvZ18QNRf7LI5gvIRGgkC",
+      "name": "AERO Festival I Samstag",
+      "city": "Belp",
+      "country": "Suisse",
+      "countryCode": "CH",
+      "date": "2027-06-26",
+      "url": "https://www.universe.com/events/aero-festival-i-samstag-tickets-SCXBVG?ref=ticketmaster",
+      "source": "Ticketmaster Discovery API",
+      "genres": [
+        "Dance/Electronic"
+      ],
+      "genreScope": "electronic_broad",
+      "festivalConfidence": "unverified",
+      "salesStart": "2026-11-24T23:00:00Z",
+      "salesEnd": "2027-06-26T22:00:00Z",
+      "eventStatus": "offsale",
+      "saleStatus": "unverified"
+    },
+    {
       "id": "17u8v0G6CVtr-Dx",
       "name": "Lytham Festival - Fatboy Slim + special guest Becky Hill",
       "city": "Lancashire",
@@ -528,6 +585,26 @@
       "saleStatus": "unverified"
     },
     {
+      "id": "ZG9rmIYnyZaeea",
+      "name": "Day 2 - NU GENEA LIVE BAND | Balena Festival",
+      "city": "Genova",
+      "country": "Italie",
+      "countryCode": "IT",
+      "date": "2027-07-23",
+      "url": "https://www.ticketmaster.it/biglietti/day-2-nu-genea-live-band-balena-festival-genova-23-07-2027/event/gpz8cwr56rqo",
+      "source": "Ticketmaster Discovery API",
+      "genres": [
+        "Dance/Electronic",
+        "Disco"
+      ],
+      "genreScope": "electronic_broad",
+      "festivalConfidence": "unverified",
+      "salesStart": "2026-11-25T13:00:00Z",
+      "salesEnd": "2027-07-23T16:30:00Z",
+      "eventStatus": "offsale",
+      "saleStatus": "unverified"
+    },
+    {
       "id": "ZG9rmIYnyZdkAd",
       "name": "11 Agosto - 1 Day - Color Fest 15 | Chi vive in Calabria, chi vive d’amore",
       "city": "Lamezia Terme",
@@ -545,6 +622,26 @@
       "salesStart": "2026-11-18T10:00:00Z",
       "salesEnd": "2027-08-11T14:30:00Z",
       "eventStatus": "onsale",
+      "saleStatus": "unverified"
+    },
+    {
+      "id": "LvZ18QYp9BtkbVXFO2Cln",
+      "name": "Wonderland Festival 2027",
+      "city": "Nottingham",
+      "country": "Royaume-Uni",
+      "countryCode": "GB",
+      "date": "2027-08-21",
+      "url": "https://www.universe.com/events/wonderland-festival-2027-tickets-X7RGVP?ref=ticketmaster",
+      "source": "Ticketmaster Discovery API",
+      "genres": [
+        "Club Dance",
+        "Dance/Electronic"
+      ],
+      "genreScope": "electronic_broad",
+      "festivalConfidence": "unverified",
+      "salesStart": "2026-11-27T10:00:00Z",
+      "salesEnd": "2027-08-21T22:00:00Z",
+      "eventStatus": "offsale",
       "saleStatus": "unverified"
     }
   ]
