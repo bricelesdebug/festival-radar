@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-11-25T08:42:39.685858+00:00",
+  "updatedAt": "2026-11-25T21:45:23.699424+00:00",
   "source": "Ticketmaster Discovery API",
   "collection": {
-    "updatedAt": "2026-11-25T08:42:39.685858+00:00",
+    "updatedAt": "2026-11-25T21:45:23.699424+00:00",
     "complete": true,
     "countries": {
       "BE": {
@@ -11,7 +11,7 @@
       },
       "NL": {
         "status": "complete",
-        "scanned": 87
+        "scanned": 88
       },
       "FR": {
         "status": "complete",
@@ -23,11 +23,11 @@
       },
       "ES": {
         "status": "complete",
-        "scanned": 13
+        "scanned": 15
       },
       "IT": {
         "status": "complete",
-        "scanned": 20
+        "scanned": 19
       },
       "PT": {
         "status": "complete",
@@ -35,11 +35,11 @@
       },
       "GB": {
         "status": "complete",
-        "scanned": 646
+        "scanned": 652
       },
       "CH": {
         "status": "complete",
-        "scanned": 21
+        "scanned": 20
       },
       "AT": {
         "status": "complete",
@@ -103,7 +103,7 @@
       }
     },
     "failedCountries": [],
-    "candidateCount": 26
+    "candidateCount": 27
   },
   "note": "Discovery candidates only; festival identity and ticket availability require review.",
   "events": [
@@ -455,6 +455,65 @@
       "saleStatus": "unverified"
     },
     {
+      "id": "Z698xZbpZ16vaSbbeF",
+      "name": "Down The Rabbit Hole 2027 - Festivalticket",
+      "city": "Beuningen Gld",
+      "country": "Pays-Bas",
+      "countryCode": "NL",
+      "date": "2027-07-02",
+      "url": "https://www.ticketmaster.nl/event/down-the-rabbit-hole-2027-festivalticket-tickets/1273618088?language=en-us",
+      "source": "Ticketmaster Discovery API",
+      "genres": [
+        "Acid House",
+        "Acid Techno",
+        "Adult Alternative Pop/Rock",
+        "Afro-Pop",
+        "Alternative",
+        "Alternative Rock",
+        "Ambient Electronica",
+        "Ambient House",
+        "Ambient Techno",
+        "Club Dance",
+        "Country",
+        "Dance Pop",
+        "Dance/Electronic",
+        "Electro-Techno",
+        "Experimental",
+        "Folk",
+        "Funk-Rock",
+        "Funky Breaks",
+        "Goth Metal",
+        "Heavy Metal",
+        "Hip-Hop/Rap",
+        "House",
+        "Indie Pop",
+        "Indie Rock",
+        "Metal",
+        "Other",
+        "Pop",
+        "Punk",
+        "R&B",
+        "Rap-Rock",
+        "Rock",
+        "Singer-Songwriter",
+        "Soul",
+        "Stoner Metal",
+        "Tech-House",
+        "Techno",
+        "Trance",
+        "Undefined",
+        "Urban",
+        "World",
+        "World Dance"
+      ],
+      "genreScope": "electronic_broad",
+      "festivalConfidence": "unverified",
+      "salesStart": "2026-11-28T09:00:00Z",
+      "salesEnd": "2027-07-04T16:00:00Z",
+      "eventStatus": "offsale",
+      "saleStatus": "unverified"
+    },
+    {
       "id": "17u8v0G6CVtr-Dx",
       "name": "Lytham Festival - Fatboy Slim + special guest Becky Hill",
       "city": "Lancashire",
@@ -601,7 +660,7 @@
       "festivalConfidence": "unverified",
       "salesStart": "2026-11-25T13:00:00Z",
       "salesEnd": "2027-07-23T16:30:00Z",
-      "eventStatus": "offsale",
+      "eventStatus": "onsale",
       "saleStatus": "unverified"
     },
     {
