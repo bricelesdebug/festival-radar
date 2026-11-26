@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-11-26T08:27:13.887728+00:00",
+  "updatedAt": "2026-11-26T21:38:20.320899+00:00",
   "source": "Ticketmaster Discovery API",
   "collection": {
-    "updatedAt": "2026-11-26T08:27:13.887728+00:00",
+    "updatedAt": "2026-11-26T21:38:20.320899+00:00",
     "complete": true,
     "countries": {
       "BE": {
@@ -11,7 +11,7 @@
       },
       "NL": {
         "status": "complete",
-        "scanned": 88
+        "scanned": 87
       },
       "FR": {
         "status": "complete",
@@ -19,7 +19,7 @@
       },
       "DE": {
         "status": "complete",
-        "scanned": 59
+        "scanned": 58
       },
       "ES": {
         "status": "complete",
@@ -35,7 +35,7 @@
       },
       "GB": {
         "status": "complete",
-        "scanned": 650
+        "scanned": 659
       },
       "CH": {
         "status": "complete",
@@ -43,11 +43,11 @@
       },
       "AT": {
         "status": "complete",
-        "scanned": 3
+        "scanned": 4
       },
       "PL": {
         "status": "complete",
-        "scanned": 82
+        "scanned": 81
       },
       "CZ": {
         "status": "complete",
@@ -63,7 +63,7 @@
       },
       "DK": {
         "status": "complete",
-        "scanned": 27
+        "scanned": 26
       },
       "SE": {
         "status": "complete",
@@ -71,7 +71,7 @@
       },
       "IE": {
         "status": "complete",
-        "scanned": 54
+        "scanned": 53
       },
       "NO": {
         "status": "complete",
@@ -141,8 +141,8 @@
       "genreScope": "electronic_broad",
       "festivalConfidence": "unverified",
       "salesStart": "2026-07-08T10:00:00Z",
-      "salesEnd": "2026-11-28T22:59:00Z",
-      "eventStatus": "onsale",
+      "salesEnd": "2026-11-26T19:00:00Z",
+      "eventStatus": "offsale",
       "saleStatus": "unverified"
     },
     {
@@ -619,8 +619,8 @@
       ],
       "genreScope": "electronic_broad",
       "festivalConfidence": "unverified",
-      "salesStart": "2026-07-31T09:00:00Z",
-      "salesEnd": "2027-07-10T11:00:00Z",
+      "salesStart": null,
+      "salesEnd": null,
       "eventStatus": "onsale",
       "saleStatus": "unverified"
     },
