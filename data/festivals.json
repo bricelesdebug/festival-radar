@@ -1,13 +1,13 @@
 {
-  "updatedAt": "2026-11-27T08:41:33.045040+00:00",
+  "updatedAt": "2026-11-27T21:23:01.510949+00:00",
   "source": "Ticketmaster Discovery API",
   "collection": {
-    "updatedAt": "2026-11-27T08:41:33.045040+00:00",
+    "updatedAt": "2026-11-27T21:23:01.510949+00:00",
     "complete": true,
     "countries": {
       "BE": {
         "status": "complete",
-        "scanned": 32
+        "scanned": 31
       },
       "NL": {
         "status": "complete",
@@ -35,11 +35,11 @@
       },
       "GB": {
         "status": "complete",
-        "scanned": 658
+        "scanned": 654
       },
       "CH": {
         "status": "complete",
-        "scanned": 20
+        "scanned": 23
       },
       "AT": {
         "status": "complete",
@@ -47,11 +47,11 @@
       },
       "PL": {
         "status": "complete",
-        "scanned": 81
+        "scanned": 78
       },
       "CZ": {
         "status": "complete",
-        "scanned": 25
+        "scanned": 22
       },
       "HR": {
         "status": "complete",
@@ -67,11 +67,11 @@
       },
       "SE": {
         "status": "complete",
-        "scanned": 13
+        "scanned": 14
       },
       "IE": {
         "status": "complete",
-        "scanned": 53
+        "scanned": 52
       },
       "NO": {
         "status": "complete",
@@ -79,7 +79,7 @@
       },
       "FI": {
         "status": "complete",
-        "scanned": 1
+        "scanned": 2
       },
       "EE": {
         "status": "complete",
@@ -103,29 +103,10 @@
       }
     },
     "failedCountries": [],
-    "candidateCount": 27
+    "candidateCount": 30
   },
   "note": "Discovery candidates only; festival identity and ticket availability require review.",
   "events": [
-    {
-      "id": "Z698xZu3Z16v7-Pzjk",
-      "name": "Tension Winter Festival 2026 | Friday",
-      "city": "Basel",
-      "country": "Suisse",
-      "countryCode": "CH",
-      "date": "2026-11-27",
-      "url": "https://www.ticketmaster.ch/event/tension-winter-festival-2026-%7C-friday-tickets/1121978706?language=en-us",
-      "source": "Ticketmaster Discovery API",
-      "genres": [
-        "Dance/Electronic"
-      ],
-      "genreScope": "electronic_broad",
-      "festivalConfidence": "unverified",
-      "salesStart": "2026-08-12T13:27:00Z",
-      "salesEnd": "2026-11-28T04:00:00Z",
-      "eventStatus": "onsale",
-      "saleStatus": "unverified"
-    },
     {
       "id": "Z698xZu3Z16v7K4-Zv",
       "name": "Tension Winter Festival 2026 | 2 day ticket (27+28.11.2026)",
@@ -142,7 +123,7 @@
       "festivalConfidence": "unverified",
       "salesStart": "2026-07-08T10:00:00Z",
       "salesEnd": "2026-11-27T19:00:00Z",
-      "eventStatus": "onsale",
+      "eventStatus": "offsale",
       "saleStatus": "unverified"
     },
     {
@@ -319,7 +300,7 @@
       "festivalConfidence": "unverified",
       "salesStart": "2026-11-27T10:00:00Z",
       "salesEnd": "2027-06-05T21:30:00Z",
-      "eventStatus": "offsale",
+      "eventStatus": "onsale",
       "saleStatus": "unverified"
     },
     {
@@ -338,7 +319,7 @@
       "festivalConfidence": "unverified",
       "salesStart": "2026-11-27T10:00:00Z",
       "salesEnd": "2027-06-12T22:00:00Z",
-      "eventStatus": "offsale",
+      "eventStatus": "onsale",
       "saleStatus": "unverified"
     },
     {
@@ -664,6 +645,82 @@
       "saleStatus": "unverified"
     },
     {
+      "id": "Z698xZu3Z1kk37yJb",
+      "name": "Tension Festival 2027 | Friday",
+      "city": "Basel",
+      "country": "Suisse",
+      "countryCode": "CH",
+      "date": "2027-07-30",
+      "url": "https://www.ticketmaster.ch/event/tension-festival-2027-%7C-friday-tickets/192139998?language=en-us",
+      "source": "Ticketmaster Discovery API",
+      "genres": [
+        "Dance/Electronic"
+      ],
+      "genreScope": "electronic_broad",
+      "festivalConfidence": "unverified",
+      "salesStart": "2026-11-27T15:00:00Z",
+      "salesEnd": "2027-07-30T21:59:00Z",
+      "eventStatus": "onsale",
+      "saleStatus": "unverified"
+    },
+    {
+      "id": "Z698xZu3Z1kj__ojS",
+      "name": "Tension Festival 2027 | Saturday",
+      "city": "Basel",
+      "country": "Suisse",
+      "countryCode": "CH",
+      "date": "2027-07-31",
+      "url": "https://www.ticketmaster.ch/event/tension-festival-2027-%7C-saturday-tickets/719651733?language=en-us",
+      "source": "Ticketmaster Discovery API",
+      "genres": [
+        "Dance/Electronic"
+      ],
+      "genreScope": "electronic_broad",
+      "festivalConfidence": "unverified",
+      "salesStart": "2026-11-27T15:00:00Z",
+      "salesEnd": "2027-07-31T21:59:00Z",
+      "eventStatus": "onsale",
+      "saleStatus": "unverified"
+    },
+    {
+      "id": "Z698xZu3Z16v1ovkAf",
+      "name": "Tension Festival 2027 | 3 day ticket",
+      "city": "Basel",
+      "country": "Suisse",
+      "countryCode": "CH",
+      "date": "2027-08-01",
+      "url": "https://www.ticketmaster.ch/event/tension-festival-2027-%7C-3-day-ticket-tickets/1291046154?language=en-us",
+      "source": "Ticketmaster Discovery API",
+      "genres": [
+        "Dance/Electronic"
+      ],
+      "genreScope": "electronic_broad",
+      "festivalConfidence": "unverified",
+      "salesStart": "2026-11-27T15:00:00Z",
+      "salesEnd": "2027-08-01T21:00:00Z",
+      "eventStatus": "onsale",
+      "saleStatus": "unverified"
+    },
+    {
+      "id": "Z698xZu3Z1k0-Ozjz",
+      "name": "Tension Festival 2027 | Sunday",
+      "city": "Basel",
+      "country": "Suisse",
+      "countryCode": "CH",
+      "date": "2027-08-01",
+      "url": "https://www.ticketmaster.ch/event/tension-festival-2027-%7C-sunday-tickets/921838738?language=en-us",
+      "source": "Ticketmaster Discovery API",
+      "genres": [
+        "Dance/Electronic"
+      ],
+      "genreScope": "electronic_broad",
+      "festivalConfidence": "unverified",
+      "salesStart": "2026-11-27T15:00:00Z",
+      "salesEnd": "2027-08-01T21:59:00Z",
+      "eventStatus": "onsale",
+      "saleStatus": "unverified"
+    },
+    {
       "id": "ZG9rmIYnyZdkAd",
       "name": "11 Agosto - 1 Day - Color Fest 15 | Chi vive in Calabria, chi vive d’amore",
       "city": "Lamezia Terme",
@@ -700,7 +757,7 @@
       "festivalConfidence": "unverified",
       "salesStart": "2026-11-27T10:00:00Z",
       "salesEnd": "2027-08-21T22:00:00Z",
-      "eventStatus": "offsale",
+      "eventStatus": "onsale",
       "saleStatus": "unverified"
     }
   ]
