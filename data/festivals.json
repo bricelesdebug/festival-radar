@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-11-27T21:23:01.510949+00:00",
+  "updatedAt": "2026-11-28T07:55:40.774216+00:00",
   "source": "Ticketmaster Discovery API",
   "collection": {
-    "updatedAt": "2026-11-27T21:23:01.510949+00:00",
+    "updatedAt": "2026-11-28T07:55:40.774216+00:00",
     "complete": true,
     "countries": {
       "BE": {
@@ -11,7 +11,7 @@
       },
       "NL": {
         "status": "complete",
-        "scanned": 87
+        "scanned": 84
       },
       "FR": {
         "status": "complete",
@@ -35,7 +35,7 @@
       },
       "GB": {
         "status": "complete",
-        "scanned": 654
+        "scanned": 646
       },
       "CH": {
         "status": "complete",
@@ -67,11 +67,11 @@
       },
       "SE": {
         "status": "complete",
-        "scanned": 14
+        "scanned": 13
       },
       "IE": {
         "status": "complete",
-        "scanned": 52
+        "scanned": 51
       },
       "NO": {
         "status": "complete",
